@@ -445,7 +445,8 @@
       return;
     }
 
-    const formUrl = safeExternalUrl(CONFIG.GOOGLE_FORM_EMBED_URL || "");
+    const rawFormUrl = typeof CONFIG.GOOGLE_FORM_EMBED_URL === "string" ? CONFIG.GOOGLE_FORM_EMBED_URL.trim() : "";
+    const formUrl = safeExternalUrl(rawFormUrl);
     if (!formUrl) {
       frameHost.innerHTML = `
         <div class="embed-placeholder">
@@ -456,7 +457,7 @@
       return;
     }
 
-    frameHost.innerHTML = `<iframe src="${formUrl}" title="Formulaire de contact Les ateliers Masoda" loading="lazy"></iframe>`;
+    frameHost.innerHTML = `<iframe src="${formUrl}" title="Formulaire de contact Les ateliers Masoda" loading="lazy" frameborder="0" marginheight="0" marginwidth="0"></iframe>`;
   }
 
   function setupAteliersFilters(events) {
