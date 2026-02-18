@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Les ateliers Masoda - Site statique GitHub Pages
 
 Site vitrine statique (HTML, CSS, JS vanilla) prêt pour un hébergement en **GitHub Pages (project site)**.
@@ -93,3 +94,7 @@ Les fichiers sont déjà renseignés avec `yoranrd/masoda_site`.
 - Navigation mobile accessible (menu bouton + `aria-expanded`).
 - Images en lazy-loading sauf image hero prioritaire.
 - Validation de cohérence des données événements dans `./assets/js/main.js` (dates, capacité, statut, durée).
+=======
+# masoda_site
+GitHub Website Masoda
+>>>>>>> a2f6697b7c3575af2e53351fe5d4637991674bbc
