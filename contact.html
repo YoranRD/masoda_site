@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Les ateliers Masoda</title>
+  <meta name="description" content="Contacter Les ateliers Masoda pour participer à un atelier ou proposer un partenariat." />
+  <meta property="og:title" content="Contact Les ateliers Masoda" />
+  <meta property="og:description" content="Contact direct par e-mail et espace formulaire optionnel." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="./contact.html" />
+  <meta property="og:image" content="./assets/img/logo-masoda.png" />
+  <meta name="theme-color" content="#0C1013" />
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+  <script src="./assets/js/config.js" defer></script>
+  <script src="./assets/js/main.js" defer></script>
+</head>
+<body data-page="contact">
+  <a class="skip-link" href="#main-content">Aller au contenu principal</a>
+
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="./index.html" aria-label="Aller à l'accueil Les ateliers Masoda">
+        <img src="./assets/img/logo-masoda.png" alt="Logo Les ateliers Masoda" width="44" height="44" />
+        <span>Les ateliers Masoda</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-controls="primary-nav" aria-expanded="false">Menu</button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Navigation principale">
+        <a href="./index.html">Accueil</a>
+        <a href="./agenda.html">Agenda</a>
+        <a href="./ateliers.html">Ateliers</a>
+        <a href="./partenaires.html">Partenaires</a>
+        <a href="./contact.html">Contact</a>
+        <a href="./legal.html">Légal</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="section">
+      <div class="container">
+        <header class="section-header">
+          <h1 class="section-title">Contact</h1>
+          <p class="section-subtitle">Échanger sur les ateliers, les inscriptions et les collaborations.</p>
+        </header>
+
+        <div class="grid-2">
+          <article class="card card-body">
+            <h2>Contact direct</h2>
+            <p><strong>Organisatrice:</strong> <span data-config-text="ORGANIZER_NAME">Barbara</span></p>
+            <p><strong>E-mail:</strong> <a data-contact-mailto href="mailto:yoranrd@gmail.com">yoranrd@gmail.com</a></p>
+            <p><strong>Instagram:</strong> <a data-config-href="INSTAGRAM_URL" href="https://www.instagram.com/lesateliersmassoda/" target="_blank" rel="noopener noreferrer">@lesateliersmassoda</a></p>
+            <p><strong>Lieu principal:</strong> <span data-config-text="LOCATION_LABEL">BMK Folie-Bamako, Rue Jean-Pierre Timbaud, Paris, France</span></p>
+          </article>
+
+          <article class="card card-body">
+            <h2>Demande rapide</h2>
+            <p>Le bouton ci-dessous ouvre la billetterie du prochain atelier.</p>
+            <div class="button-row">
+              <a class="btn btn-primary" data-config-href="TICKETING_URL" href="https://www.billetweb.fr/paint-and-jam-with-love" target="_blank" rel="noopener noreferrer">Réserver le prochain atelier</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="form-title">
+      <div class="container">
+        <header class="section-header">
+          <h2 class="section-title" id="form-title">Formulaire (optionnel)</h2>
+          <p class="section-subtitle">Un iframe Google Form peut être ajouté plus tard.</p>
+        </header>
+        <div id="contact-form-embed" aria-label="Zone d'intégration du formulaire Google"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-shell">
+      <p>© <span data-current-year>2026</span> Les ateliers Masoda</p>
+      <div class="footer-links">
+        <a href="./legal.html">Mentions légales</a>
+        <a href="./contact.html">Contact</a>
+        <a data-config-href="INSTAGRAM_URL" href="https://www.instagram.com/lesateliersmassoda/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

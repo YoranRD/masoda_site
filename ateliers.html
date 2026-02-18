@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ateliers | Les ateliers Masoda</title>
+  <meta name="description" content="Explorer tous les ateliers Les ateliers Masoda, filtrer par sessions à venir et passées." />
+  <meta property="og:title" content="Ateliers Les ateliers Masoda" />
+  <meta property="og:description" content="Catalogue des ateliers art et bien-être de Masoda." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="./ateliers.html" />
+  <meta property="og:image" content="./assets/img/event-paint-jam.jpg" />
+  <meta name="theme-color" content="#0C1013" />
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+  <script src="./assets/js/config.js" defer></script>
+  <script src="./assets/js/main.js" defer></script>
+</head>
+<body data-page="ateliers">
+  <a class="skip-link" href="#main-content">Aller au contenu principal</a>
+
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="./index.html" aria-label="Aller à l'accueil Les ateliers Masoda">
+        <img src="./assets/img/logo-masoda.png" alt="Logo Les ateliers Masoda" width="44" height="44" />
+        <span>Les ateliers Masoda</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-controls="primary-nav" aria-expanded="false">Menu</button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Navigation principale">
+        <a href="./index.html">Accueil</a>
+        <a href="./agenda.html">Agenda</a>
+        <a href="./ateliers.html">Ateliers</a>
+        <a href="./partenaires.html">Partenaires</a>
+        <a href="./contact.html">Contact</a>
+        <a href="./legal.html">Légal</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="section">
+      <div class="container">
+        <header class="section-header">
+          <h1 class="section-title">Tous les ateliers</h1>
+          <p class="section-subtitle">Filtrer rapidement les sessions à venir et les éditions passées.</p>
+        </header>
+
+        <div class="filter-tabs" role="tablist" aria-label="Filtrer les ateliers">
+          <button class="filter-tab is-active" type="button" role="tab" aria-selected="true" data-filter="all">Tous</button>
+          <button class="filter-tab" type="button" role="tab" aria-selected="false" data-filter="upcoming">À venir</button>
+          <button class="filter-tab" type="button" role="tab" aria-selected="false" data-filter="past">Passés</button>
+        </div>
+
+        <div id="ateliers-grid" class="event-grid">
+          <p class="muted">Chargement des ateliers...</p>
+        </div>
+        <div data-validation-output class="validation-output is-hidden" aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-shell">
+      <p>© <span data-current-year>2026</span> Les ateliers Masoda</p>
+      <div class="footer-links">
+        <a href="./legal.html">Mentions légales</a>
+        <a href="./contact.html">Contact</a>
+        <a data-config-href="INSTAGRAM_URL" href="https://www.instagram.com/lesateliersmassoda/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

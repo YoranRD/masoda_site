@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Image partenaire placeholder</title>
+  <desc id="desc">Visuel temporaire pour section partenaires.</desc>
+  <defs>
+    <linearGradient id="bg2" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#1C12B6" />
+      <stop offset="100%" stop-color="#291F25" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg2)" />
+  <rect x="150" y="140" width="900" height="395" rx="30" fill="#ECD5B0" fill-opacity="0.2" stroke="#FDD9D3" stroke-opacity="0.35" />
+  <text x="600" y="320" text-anchor="middle" fill="#ECD5B0" font-size="58" font-family="Georgia, serif">Partenaire en avant</text>
+  <text x="600" y="390" text-anchor="middle" fill="#FDD9D3" font-size="32" font-family="Segoe UI, sans-serif">Ajouter logo ou photo du lieu</text>
+</svg>

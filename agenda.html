@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agenda | Les ateliers Masoda</title>
+  <meta name="description" content="Agenda des prochains ateliers Les ateliers Masoda, calendrier et historique des sessions passées." />
+  <meta property="og:title" content="Agenda Les ateliers Masoda" />
+  <meta property="og:description" content="Consulter l'agenda et le prochain atelier Paint & Jam with Love." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="./agenda.html" />
+  <meta property="og:image" content="./assets/img/event-paint-jam.jpg" />
+  <meta name="theme-color" content="#0C1013" />
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+  <script src="./assets/js/config.js" defer></script>
+  <script src="./assets/js/main.js" defer></script>
+</head>
+<body data-page="agenda">
+  <a class="skip-link" href="#main-content">Aller au contenu principal</a>
+
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="./index.html" aria-label="Aller à l'accueil Les ateliers Masoda">
+        <img src="./assets/img/logo-masoda.png" alt="Logo Les ateliers Masoda" width="44" height="44" />
+        <span>Les ateliers Masoda</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-controls="primary-nav" aria-expanded="false">Menu</button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Navigation principale">
+        <a href="./index.html">Accueil</a>
+        <a href="./agenda.html">Agenda</a>
+        <a href="./ateliers.html">Ateliers</a>
+        <a href="./partenaires.html">Partenaires</a>
+        <a href="./contact.html">Contact</a>
+        <a href="./legal.html">Légal</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="section">
+      <div class="container">
+        <header class="section-header">
+          <h1 class="section-title">Agenda</h1>
+          <p class="section-subtitle">Vue calendrier + récapitulatif des ateliers passés.</p>
+        </header>
+        <div class="embed-ratio" id="calendar-embed" aria-label="Intégration du calendrier Google"></div>
+        <div class="button-row" style="margin-top:0.9rem;">
+          <a id="calendar-add-link" class="btn btn-secondary" href="#" target="_blank" rel="noopener noreferrer">Ajouter au calendrier</a>
+        </div>
+        <p id="calendar-helper" class="muted"></p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="agenda-next-title">
+      <div class="container">
+        <header class="section-header">
+          <h2 class="section-title" id="agenda-next-title">Prochain atelier</h2>
+        </header>
+        <div id="agenda-next-event" class="event-grid">
+          <p class="muted">Chargement du prochain atelier...</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="past-title">
+      <div class="container">
+        <header class="section-header">
+          <h2 class="section-title" id="past-title">Ateliers passés</h2>
+          <a href="./ateliers.html" class="btn btn-secondary btn-small">Voir la liste complète</a>
+        </header>
+        <div id="agenda-past-events" class="event-grid">
+          <p class="muted">Chargement des ateliers passés...</p>
+        </div>
+        <div data-validation-output class="validation-output is-hidden" aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-shell">
+      <p>© <span data-current-year>2026</span> Les ateliers Masoda</p>
+      <div class="footer-links">
+        <a href="./legal.html">Mentions légales</a>
+        <a href="./contact.html">Contact</a>
+        <a data-config-href="INSTAGRAM_URL" href="https://www.instagram.com/lesateliersmassoda/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
