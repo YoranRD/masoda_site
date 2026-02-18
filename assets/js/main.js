@@ -457,7 +457,7 @@
       return;
     }
 
-    frameHost.innerHTML = `<iframe src="${formUrl}" title="Formulaire de contact Les ateliers Masoda" loading="lazy" frameborder="0" marginheight="0" marginwidth="0"></iframe>`;
+    frameHost.innerHTML = `<iframe src="${escapeHtml(rawFormUrl)}" title="Formulaire de contact Les ateliers Masoda" loading="lazy" frameborder="0" marginheight="0" marginwidth="0"></iframe>`;
   }
 
   function setupAteliersFilters(events) {
