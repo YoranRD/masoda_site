@@ -44,12 +44,18 @@ Variables:
 
 Si `GOOGLE_CALENDAR_EMBED_URL` est vide, la page agenda affiche automatiquement un placeholder explicatif.
 
-## Où coller un Google Form embed (optionnel)
+## How to create & embed Google Form contact
 
-Dans `./assets/js/config.js`:
-- `GOOGLE_FORM_EMBED_URL`
+1. Créer un Google Form depuis [Google Forms](https://forms.google.com).
+2. Cliquer sur `Envoyer` puis l'icône `<>` (Intégrer HTML).
+3. Copier l'URL `src` de l'iframe.
+4. Coller cette URL dans `./assets/js/config.js`:
+   - `GOOGLE_FORM_EMBED_URL`
+5. Enregistrer et recharger la page `./contact.html`.
 
-Si la variable est vide, un placeholder apparaît sur `contact.html`.
+Comportement:
+- Si `GOOGLE_FORM_EMBED_URL` est vide, un placeholder d'instructions reste affiché.
+- Si `GOOGLE_FORM_EMBED_URL` est renseigné, le formulaire est intégré en iframe responsive.
 
 ## Modifier les couleurs / design
 
@@ -67,6 +73,8 @@ Dossier image principal:
 Références:
 - `logo-masoda.png` (logo)
 - `event-paint-jam.jpg` (visuel prochain atelier)
+- `favicon.ico` (favicon placeholder)
+- `og-image.png` (OpenGraph placeholder 1200x630)
 - `placeholder-event.svg` / `placeholder-partner.svg` (temporaires)
 
 Remplacer les placeholders puis mettre à jour les chemins `cover_image` dans `./data/events.json`.
