@@ -1,0 +1,127 @@
+---
+import CTASection from "../components/CTASection.astro";
+import PageHero from "../components/PageHero.astro";
+import SectionIntro from "../components/SectionIntro.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { booking, siteIdentity } from "../data/site";
+
+const values = [
+  {
+    title: "Un regard afro-centré assumé",
+    description:
+      "Masoda valorise des références, des sensibilités et des ambiances ancrées dans des imaginaires afro-diasporiques sans transformer ce regard en posture rigide."
+  },
+  {
+    title: "Une chaleur premium",
+    description:
+      "Le projet cherche une qualité d'accueil et de détail qui reste accessible, conviviale et jamais froide."
+  },
+  {
+    title: "Une créativité qui fait du bien",
+    description:
+      "L'art, la musique, la matière, le mouvement et le partage servent ici à retrouver de la présence, de l'élan et de la joie."
+  }
+];
+
+const makingSteps = [
+  "Une intention claire : faire naître une parenthèse où l'on crée sans surperformance.",
+  "Un cadre visuel cohérent : couleurs, matières, rythme et ambiance sont pensés ensemble.",
+  "Une proposition lisible : lieu, durée, geste créatif et niveau d'accessibilité restent faciles à comprendre.",
+  "Une suite éditoriale : le journal, Pinterest et les sélections à venir prolongent l'univers au-delà de la session."
+];
+---
+
+<BaseLayout
+  title="À propos | Masoda"
+  description="Comprendre la vision, le ton et la promesse de Masoda : un hub afro-centré où l'atelier reste le cœur du projet."
+  canonicalPath="/a-propos/"
+>
+  <PageHero
+    eyebrow="À propos"
+    title="Masoda est né du désir de réunir création, soin et convivialité."
+    intro="Le projet s'organise autour d'un principe simple : proposer des expériences et des contenus qui font place à la beauté, au souffle et au lien, sans rigidité ni folklore de surface."
+    actions={[
+      { href: booking.url, label: booking.label, external: true },
+      { href: "/partenaires/", label: "Voir les collaborations", variant: "secondary" }
+    ]}
+    meta={["Ateliers", "Journal", "Boutique à venir"]}
+  >
+    <div slot="aside" class="surface-card">
+      <p class="card-meta">Identité</p>
+      <h2 style="font-size:1.45rem; margin-bottom:0.55rem;">{siteIdentity.tagline}</h2>
+      <p>{siteIdentity.description}</p>
+    </div>
+  </PageHero>
+
+  <section class="section section-tight">
+    <div class="container split-grid">
+      <div class="surface-card">
+        <SectionIntro
+          eyebrow="Le cœur du projet"
+          title="L'atelier reste la colonne vertébrale."
+          intro="Masoda n'est ni un simple site éditorial, ni une boutique déguisée : l'atelier est la première porte d'entrée, et tout le reste existe pour enrichir cette expérience."
+        />
+        <p>
+          Le journal permet de prolonger l'univers, de partager des pistes de mieux-être et de donner de la matière aux thèmes
+          qui traversent les rencontres. La future boutique viendra plus tard, comme un prolongement curaté, pas comme un
+          catalogue massif.
+        </p>
+      </div>
+
+      <div class="callout">
+        <p class="card-meta">Ce que Masoda évite</p>
+        <ul class="simple-list">
+          <li>Le ton corporate froid.</li>
+          <li>Les clichés pseudo-spirituels ou sur-thérapeutiques.</li>
+          <li>Le décor e-commerce standardisé sans âme.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionIntro
+        eyebrow="Principes"
+        title="Trois repères pour garder la bonne direction."
+        intro="Masoda cherche un équilibre entre soin, esthétique, lisibilité et sensation de communauté."
+      />
+
+      <div class="grid-3">
+        {
+          values.map((value) => (
+            <article class="surface-card">
+              <h3>{value.title}</h3>
+              <p>{value.description}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionIntro
+        eyebrow="Méthode"
+        title="Comment une édition prend forme."
+        intro="Chaque proposition est cadrée pour rester chaleureuse, claire et praticable, quel que soit le contexte."
+      />
+
+      <ul class="key-points">
+        {makingSteps.map((step) => <li>{step}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <CTASection
+    eyebrow="Prochaine étape"
+    title="Explorer un atelier ou ouvrir une conversation."
+    body="Le site est conçu pour rendre la réservation évidente, puis pour faciliter les collaborations et la découverte de l'univers Masoda."
+    actions={[
+      { href: booking.url, label: booking.label, external: true },
+      { href: "/contact/", label: "Écrire à Masoda", variant: "secondary" }
+    ]}
+  />
+</BaseLayout>
+

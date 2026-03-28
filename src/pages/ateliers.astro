@@ -1,0 +1,182 @@
+---
+import CTASection from "../components/CTASection.astro";
+import FaqList from "../components/FaqList.astro";
+import PageHero from "../components/PageHero.astro";
+import SectionIntro from "../components/SectionIntro.astro";
+import WorkshopCard from "../components/WorkshopCard.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { faqItems } from "../data/faq";
+import { booking, collaborationHighlights } from "../data/site";
+import {
+  archivedEvents,
+  atelierAudience,
+  atelierBenefits,
+  atelierPracticalInfo,
+  privateEventUseCases,
+  workshopFormats
+} from "../data/workshops";
+import { formatDateRangeFrench } from "../lib/date";
+---
+
+<BaseLayout
+  title="Ateliers | Masoda"
+  description="Découvrir les formats d'ateliers Masoda, la promesse de l'expérience, les informations pratiques et la réservation du moment."
+  canonicalPath="/ateliers/"
+>
+  <PageHero
+    eyebrow="Ateliers"
+    title="La page la plus importante du site reste celle-ci."
+    intro="Masoda propose des expériences créatives afro-centrées où l'on vient pour souffler, créer, écouter, partager et repartir avec quelque chose qui dure au-delà du moment."
+    actions={[
+      { href: booking.url, label: booking.label, external: true },
+      { href: "/evenements/", label: "Voir les événements", variant: "secondary" }
+    ]}
+    meta={["Réservation simple", "Paris", "Groupes à taille humaine"]}
+  >
+    <div slot="aside" class="surface-card">
+      <p class="card-meta">Réservation</p>
+      <h2 style="font-size:1.45rem; margin-bottom:0.55rem;">Billetterie du moment</h2>
+      <p>Le lien Billetweb est le point d'entrée principal. Il est mis à jour dans une seule configuration du projet.</p>
+      <a class="button button-secondary" href={booking.url} target="_blank" rel="noopener noreferrer">
+        Ouvrir la billetterie
+      </a>
+    </div>
+  </PageHero>
+
+  <section class="section section-tight">
+    <div class="container">
+      <SectionIntro
+        eyebrow="Promesse"
+        title="Ce que l'expérience cherche à créer."
+        intro="Chaque atelier est pensé pour préserver la chaleur du groupe tout en laissant à chacune et chacun un vrai espace intérieur."
+      />
+
+      <div class="grid-3">
+        {
+          atelierBenefits.map((benefit) => (
+            <article class="surface-card">
+              <h3>{benefit.title}</h3>
+              <p>{benefit.description}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split-grid">
+      <div class="surface-card">
+        <SectionIntro
+          eyebrow="Pour qui"
+          title="Des formats accessibles, sans prérequis de performance."
+          intro="Le projet reste ouvert à des personnes venues pour créer, relâcher la pression, rencontrer ou simplement vivre un moment bien pensé."
+        />
+        <ul class="simple-list">
+          {atelierAudience.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+
+      <div class="surface-card">
+        <SectionIntro
+          eyebrow="Infos pratiques"
+          title="Des repères simples avant de réserver."
+          intro="La lisibilité reste essentielle, sur mobile comme sur desktop."
+        />
+        <ul class="simple-list">
+          {atelierPracticalInfo.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionIntro
+        eyebrow="Formats"
+        title="Trois manières d'entrer dans l'univers Masoda."
+        intro="Les intitulés évoluent selon les cycles, mais l'esprit reste le même : relier créativité, sensation de mieux-être et qualité de présence."
+      />
+
+      <div class="grid-3">
+        {
+          workshopFormats.map((format) => (
+            <WorkshopCard
+              title={format.title}
+              summary={format.summary}
+              detail={format.detail}
+              tags={[...format.tags]}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionIntro
+        eyebrow="Éditions archivées"
+        title="Quelques formats déjà passés par Masoda."
+        intro="Les dates ci-dessous servent de repères éditoriaux et montrent le type d'expériences déjà proposées."
+      />
+
+      <div class="grid-2">
+        {
+          archivedEvents.map((event) => (
+            <WorkshopCard
+              title={event.title}
+              summary={event.excerpt}
+              meta={formatDateRangeFrench(new Date(event.start), new Date(event.end))}
+              image={event.image}
+              imageAlt={`Visuel associé à l'atelier ${event.title}`}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split-grid">
+      <div class="surface-card">
+        <SectionIntro
+          eyebrow="Privatiser"
+          title="Masoda peut aussi prendre place ailleurs."
+          intro="Au-delà de la billetterie publique, certains formats peuvent être adaptés à un lieu, une marque ou un collectif."
+        />
+        <ul class="simple-list">
+          {privateEventUseCases.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+
+      <div class="callout">
+        <p class="card-meta">Collaboration</p>
+        <ul class="simple-list">
+          {collaborationHighlights.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionIntro
+        eyebrow="Questions fréquentes"
+        title="Les réponses les plus utiles avant de réserver."
+      />
+      <FaqList items={faqItems} />
+    </div>
+  </section>
+
+  <CTASection
+    eyebrow="Réserver"
+    title="Quand l'envie est là, la billetterie doit rester évidente."
+    body="Le site laisse volontairement peu d'obstacles entre la découverte de Masoda et l'inscription à la prochaine édition."
+    actions={[
+      { href: booking.url, label: booking.label, external: true },
+      { href: "/contact/", label: "Imaginer une édition privée", variant: "secondary" }
+    ]}
+  />
+</BaseLayout>
+

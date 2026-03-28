@@ -1,0 +1,132 @@
+---
+import CTASection from "../components/CTASection.astro";
+import PageHero from "../components/PageHero.astro";
+import SectionIntro from "../components/SectionIntro.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { booking, contactDetails, socialLinks } from "../data/site";
+import { withBase } from "../lib/links";
+---
+
+<BaseLayout
+  title="Contact | Masoda"
+  description="Contacter Masoda pour réserver un atelier, imaginer une collaboration ou suivre le projet."
+  canonicalPath="/contact/"
+>
+  <PageHero
+    eyebrow="Contact"
+    title="Une prise de contact simple vaut mieux qu'un formulaire complexe."
+    intro="La page contact garde un chemin direct vers la réservation, l'e-mail et les réseaux. Le formulaire intégré reste disponible comme option complémentaire."
+    actions={[
+      {
+        href: `mailto:${contactDetails.email}?subject=Contact%20Masoda`,
+        label: "Écrire par e-mail",
+        external: true
+      },
+      { href: booking.url, label: booking.label, variant: "secondary", external: true }
+    ]}
+    meta={["E-mail direct", "Instagram", "Formulaire optionnel"]}
+  />
+
+  <section class="section section-tight">
+    <div class="container split-grid">
+      <div class="surface-card">
+        <SectionIntro
+          eyebrow="Coordonnées"
+          title="Les informations essentielles en un coup d'œil."
+          intro="Le contact direct reste la meilleure façon d'ouvrir un échange clair."
+        />
+        <ul class="simple-list">
+          <li>
+            <strong>Organisatrice</strong>
+            <span>{contactDetails.organizerName}</span>
+          </li>
+          <li>
+            <strong>E-mail</strong>
+            <a class="text-link" href={`mailto:${contactDetails.email}`}>{contactDetails.email}</a>
+          </li>
+          <li>
+            <strong>Base</strong>
+            <span>{contactDetails.city}</span>
+          </li>
+          <li>
+            <strong>Lieu déjà mentionné</strong>
+            <span>{contactDetails.location}</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="surface-card">
+        <SectionIntro
+          eyebrow="Demande rapide"
+          title="Deux cas dominent cette page."
+          intro="Réserver une édition ou présenter une collaboration potentielle."
+        />
+        <ul class="simple-list">
+          <li>Pour une inscription, le lien Billetweb du moment reste la voie la plus directe.</li>
+          <li>Pour une collaboration, un e-mail avec contexte, intention et échéance suffit pour démarrer.</li>
+          <li>Les réseaux servent surtout à prolonger la découverte de l'univers Masoda.</li>
+        </ul>
+        <div class="button-row" style="margin-top:1rem;">
+          <a class="button button-primary" href={booking.url} target="_blank" rel="noopener noreferrer">
+            Réserver
+          </a>
+          <a class="button button-secondary" href={withBase("/partenaires/")}>
+            Voir les partenariats
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionIntro
+        eyebrow="Formulaire"
+        title="Un formulaire reste disponible en complément."
+        intro="L'iframe peut être conservée sans alourdir l'expérience principale."
+      />
+
+      <iframe
+        class="embed-frame"
+        src={contactDetails.contactFormEmbedUrl}
+        title="Formulaire de contact Masoda"
+        loading="lazy"
+      />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionIntro
+        eyebrow="Réseaux"
+        title="Les réseaux prolongent la conversation."
+        intro="Ils servent à voir l'ambiance du projet, les annonces et les inspirations visuelles."
+      />
+
+      <div class="grid-3">
+        {
+          socialLinks.map((link) => (
+            <article class="surface-card">
+              <p class="card-meta">{link.label}</p>
+              <h3>{link.handle}</h3>
+              <p>{link.description}</p>
+              <a class="text-link" href={link.url} target="_blank" rel="noopener noreferrer">
+                Ouvrir {link.label}
+              </a>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <CTASection
+    eyebrow="Priorité"
+    title="Réserver l'atelier ou ouvrir un échange utile."
+    body="Le site garde ici la même hiérarchie qu'ailleurs : atelier d'abord, collaboration ensuite, réseaux comme troisième porte d'entrée."
+    actions={[
+      { href: booking.url, label: booking.label, external: true },
+      { href: `mailto:${contactDetails.email}`, label: "Envoyer un e-mail", variant: "secondary", external: true }
+    ]}
+  />
+</BaseLayout>

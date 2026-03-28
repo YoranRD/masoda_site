@@ -1,0 +1,156 @@
+---
+import { withBase } from "../lib/links";
+
+interface HeroAction {
+  href: string;
+  label: string;
+  variant?: "primary" | "secondary" | "text";
+  external?: boolean;
+}
+
+interface Props {
+  eyebrow?: string;
+  title: string;
+  intro: string;
+  actions?: HeroAction[];
+  meta?: string[];
+  image?: string;
+  imageAlt?: string;
+  compact?: boolean;
+}
+
+const {
+  eyebrow,
+  title,
+  intro,
+  actions = [],
+  meta = [],
+  image,
+  imageAlt = "",
+  compact = false
+} = Astro.props;
+
+const hasAside = Astro.slots.has("aside");
+---
+
+<section class:list={["page-hero", compact && "page-hero-compact"]}>
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+      <h1>{title}</h1>
+      <p class="hero-intro">{intro}</p>
+
+      {
+        meta.length > 0 && (
+          <ul class="tag-row hero-meta" aria-label="Repères principaux">
+            {meta.map((item) => <li class="tag">{item}</li>)}
+          </ul>
+        )
+      }
+
+      {
+        actions.length > 0 && (
+          <div class="button-row">
+            {actions.map((action) => (
+              <a
+                class:list={[
+                  "button",
+                  action.variant === "secondary" && "button-secondary",
+                  action.variant === "text" && "button-text",
+                  (action.variant === "primary" || !action.variant) && "button-primary"
+                ]}
+                href={withBase(action.href)}
+                target={action.external ? "_blank" : undefined}
+                rel={action.external ? "noopener noreferrer" : undefined}
+              >
+                {action.label}
+              </a>
+            ))}
+          </div>
+        )
+      }
+    </div>
+
+    {(image || hasAside) && (
+      <div class="hero-side">
+        {
+          image && (
+            <figure class="hero-visual">
+              <img src={withBase(image)} alt={imageAlt} width="1080" height="1350" loading="eager" />
+            </figure>
+          )
+        }
+
+        {hasAside && <div class="hero-aside"><slot name="aside" /></div>}
+      </div>
+    )}
+  </div>
+</section>
+
+<style>
+  .page-hero {
+    padding: clamp(2.2rem, 6vw, 4.5rem) 0 1.4rem;
+  }
+
+  .page-hero-compact {
+    padding-top: 2rem;
+  }
+
+  .hero-grid {
+    display: grid;
+    gap: 1.25rem;
+    align-items: start;
+  }
+
+  .hero-copy {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .hero-copy h1 {
+    margin-bottom: 0;
+  }
+
+  .hero-intro {
+    margin: 0;
+    max-width: 34rem;
+    font-size: 1.08rem;
+  }
+
+  .hero-meta {
+    margin: 0;
+  }
+
+  .hero-side {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .hero-visual {
+    margin: 0;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    border: 1px solid rgba(201, 164, 127, 0.48);
+    box-shadow: var(--shadow-soft);
+    background: linear-gradient(180deg, rgba(255, 250, 242, 0.6), rgba(255, 250, 242, 0.08));
+  }
+
+  .hero-visual img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+  }
+
+  .hero-aside {
+    display: grid;
+    gap: 1rem;
+  }
+
+  @media (min-width: 900px) {
+    .hero-grid {
+      grid-template-columns: minmax(0, 1.18fr) minmax(320px, 0.82fr);
+      gap: 2rem;
+    }
+  }
+</style>
+

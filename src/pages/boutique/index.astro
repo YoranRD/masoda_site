@@ -1,0 +1,119 @@
+---
+import CTASection from "../../components/CTASection.astro";
+import CategoryCard from "../../components/CategoryCard.astro";
+import PageHero from "../../components/PageHero.astro";
+import SectionIntro from "../../components/SectionIntro.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { boutiqueCategories } from "../../data/boutique";
+import { socialLinks } from "../../data/site";
+
+const pinterestLink = socialLinks.find((link) => link.label === "Pinterest");
+---
+
+<BaseLayout
+  title="Boutique | Masoda"
+  description="Préparer une future boutique affiliée élégante et éditoriale autour de baya, plantes, nutrition anti-stress, déco et art."
+  canonicalPath="/boutique/"
+>
+  <PageHero
+    eyebrow="Boutique affiliée à venir"
+    title="Une boutique pensée comme une curation, pas comme un catalogue."
+    intro="Masoda prépare une mini-boutique partenaire autour d'univers choisis avec tact. L'objectif n'est pas d'accumuler des fiches produit, mais de proposer plus tard des sélections réellement cohérentes."
+    actions={[
+      { href: "/boutique/baya/", label: "Découvrir les catégories", variant: "secondary" },
+      { href: pinterestLink?.url ?? "/", label: "Voir Pinterest", external: true }
+    ]}
+    meta={["Baya", "Plantes", "Déco", "Art"]}
+  >
+    <div slot="aside" class="callout">
+      <p class="card-meta">Cadre actuel</p>
+      <p>Aucun paiement n'est intégré à ce stade. Les liens affiliés ne seront ajoutés qu'une fois les références et les partenaires validés.</p>
+    </div>
+  </PageHero>
+
+  <section class="section section-tight">
+    <div class="container">
+      <SectionIntro
+        eyebrow="Catégories"
+        title="Cinq univers préparés dès maintenant."
+        intro="Chaque catégorie possède sa page dédiée pour accueillir plus tard des sélections et des cartes produits partenaires crédibles."
+      />
+
+      <div class="grid-3">
+        {
+          boutiqueCategories.map((category) => (
+            <CategoryCard
+              href={`/boutique/${category.slug}/`}
+              title={category.title}
+              summary={category.summary}
+              eyebrow="Curation en préparation"
+              statusLabel="Page prête"
+              image={category.image}
+              imageAlt={category.imageAlt}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionIntro
+        eyebrow="Ce qui est déjà prêt"
+        title="La structure existe avant l'ajout des produits."
+        intro="Les emplacements, les catégories et la logique éditoriale sont posés pour pouvoir intégrer plus tard de vraies références sans recommencer l'architecture."
+      />
+
+      <div class="grid-2">
+        {
+          boutiqueCategories.map((category) => (
+            <article class="surface-card">
+              <p class="card-meta">{category.title}</p>
+              <h3>{category.lead}</h3>
+              <ul class="simple-list">
+                {category.placeholderModules.map((module) => <li>{module.description}</li>)}
+              </ul>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split-grid">
+      <div class="surface-card">
+        <SectionIntro
+          eyebrow="Ligne éditoriale"
+          title="Une sélection lente, explicite et compatible avec la marque."
+          intro="Masoda garde un cadre clair pour éviter l'effet marketplace ou la recommandation opportuniste."
+        />
+        <ul class="simple-list">
+          <li>Une préférence pour les objets, matières et références qui prolongent réellement l'univers du site.</li>
+          <li>Une sélection courte et assumée plutôt qu'un grand nombre de liens peu différenciés.</li>
+          <li>Des mentions d'affiliation sobres, lisibles et sans promesse exagérée.</li>
+        </ul>
+      </div>
+
+      <div class="callout">
+        <p class="card-meta">Passerelle naturelle</p>
+        <p>
+          Pinterest et le blog servent déjà de terrain d'inspiration pour préparer la future boutique : moodboards, objets,
+          matières et gestes de mieux-être peuvent y être explorés sans précipiter la recommandation marchande.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <CTASection
+    eyebrow="Découvrir"
+    title="En attendant les sélections, l'univers reste déjà accessible."
+    body="Le blog, Pinterest et les ateliers donnent déjà la texture du projet avant l'arrivée des premières références affiliées."
+    actions={[
+      { href: "/blog/", label: "Lire le journal", variant: "secondary" },
+      { href: pinterestLink?.url ?? "/", label: "Ouvrir Pinterest", external: true }
+    ]}
+  />
+</BaseLayout>
+

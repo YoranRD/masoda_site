@@ -1,0 +1,83 @@
+---
+import CTASection from "../../components/CTASection.astro";
+import PageHero from "../../components/PageHero.astro";
+import SectionIntro from "../../components/SectionIntro.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { boutiqueCategories } from "../../data/boutique";
+
+export function getStaticPaths() {
+  return boutiqueCategories.map((category) => ({
+    params: { slug: category.slug },
+    props: { category }
+  }));
+}
+
+const { category } = Astro.props;
+---
+
+<BaseLayout
+  title={`${category.title} | Boutique Masoda`}
+  description={category.summary}
+  canonicalPath={`/boutique/${category.slug}/`}
+>
+  <PageHero
+    eyebrow="Boutique en préparation"
+    title={category.title}
+    intro={category.lead}
+    actions={[
+      { href: "/boutique/", label: "Retour à la boutique", variant: "secondary" },
+      { href: "/contact/", label: "Proposer un partenaire" }
+    ]}
+    meta={["Curation affiliée", "Page prête"]}
+    image={category.image}
+    imageAlt={category.imageAlt}
+    compact={true}
+  />
+
+  <section class="section section-tight">
+    <div class="container">
+      <SectionIntro
+        eyebrow="Axes de curation"
+        title="Ce que cette catégorie devra respecter."
+        intro="La page est prête pour accueillir des références plus tard, sans inventer de produits en amont."
+      />
+
+      <ul class="key-points">
+        {category.curationAxes.map((axis) => <li>{axis}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionIntro
+        eyebrow="Modules placeholder"
+        title="Les cartes produits seront ajoutées ici."
+        intro="Chaque module est déjà prévu pour pouvoir accueillir de vraies références partenaires quand elles seront prêtes."
+      />
+
+      <div class="grid-2">
+        {
+          category.placeholderModules.map((module) => (
+            <article class="surface-card">
+              <p class="card-meta">En préparation</p>
+              <h3>{module.title}</h3>
+              <p>{module.description}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <CTASection
+    eyebrow="Suite logique"
+    title="La structure est prête, le contenu viendra avec de vrais partenaires."
+    body="Masoda garde ici un cadre élégant et maintenable pour intégrer des références fiables sans surcharger l'interface."
+    actions={[
+      { href: "/boutique/", label: "Revenir aux catégories", variant: "secondary" },
+      { href: "/contact/", label: "Parler d'une collaboration" }
+    ]}
+  />
+</BaseLayout>
+

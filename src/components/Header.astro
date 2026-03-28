@@ -1,0 +1,216 @@
+---
+import { booking, mainNavigation, secondaryNavigation, siteIdentity } from "../data/site";
+import { activeBasePath } from "../config/site";
+import { withBase } from "../lib/links";
+
+const escapeRegExp = (value: string): string => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+const currentPath = Astro.url.pathname;
+const pathWithoutBase =
+  activeBasePath === "/"
+    ? currentPath
+    : currentPath.replace(new RegExp(`^${escapeRegExp(activeBasePath)}`), "") || "/";
+
+const normalizedPath = pathWithoutBase.endsWith("/") ? pathWithoutBase : `${pathWithoutBase}/`;
+
+const isActive = (href: string): boolean => {
+  if (href === "/") {
+    return normalizedPath === "/";
+  }
+
+  return normalizedPath.startsWith(href);
+};
+
+const isSecondaryOpen = secondaryNavigation.some((item) => isActive(item.href));
+---
+
+<header class="site-header">
+  <div class="container header-shell">
+    <div class="header-top">
+      <a class="brand-link" href={withBase("/")} aria-label={`Retour à l'accueil ${siteIdentity.name}`}>
+        <img
+          src={withBase("/images/logo-masoda.png")}
+          alt="Logo Masoda avec halo"
+          width="190"
+          height="191"
+          loading="eager"
+        />
+      </a>
+
+      <a class="button button-primary header-booking" href={booking.url} target="_blank" rel="noopener noreferrer">
+        {booking.label}
+      </a>
+    </div>
+
+    <div class="header-bottom">
+      <nav aria-label="Navigation principale" class="primary-navigation">
+        <ul class="nav-list">
+          {
+            mainNavigation.map((item) => (
+              <li>
+                <a class={isActive(item.href) ? "is-active" : undefined} href={withBase(item.href)}>
+                  {item.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+
+      <details class="more-nav" open={isSecondaryOpen}>
+        <summary>Explorer</summary>
+        <ul class="more-nav-list">
+          {
+            secondaryNavigation.map((item) => (
+              <li>
+                <a class={isActive(item.href) ? "is-active" : undefined} href={withBase(item.href)}>
+                  {item.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </details>
+    </div>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    backdrop-filter: blur(14px);
+    background: rgba(248, 243, 235, 0.84);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .header-shell {
+    padding-block: 0.9rem 0.95rem;
+  }
+
+  .header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .brand-link img {
+    width: clamp(136px, 26vw, 182px);
+    height: auto;
+  }
+
+  .header-booking {
+    white-space: nowrap;
+  }
+
+  .header-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 0.9rem;
+  }
+
+  .nav-list,
+  .more-nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 0.35rem;
+    flex-wrap: wrap;
+  }
+
+  .nav-list a,
+  .more-nav-list a,
+  .more-nav summary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.7rem;
+    border-radius: 999px;
+    padding: 0.65rem 0.95rem;
+    text-decoration: none;
+    color: var(--text-soft);
+    border: 1px solid transparent;
+    transition: border-color 150ms ease, background-color 150ms ease, color 150ms ease,
+      transform 150ms ease;
+  }
+
+  .nav-list a:hover,
+  .more-nav-list a:hover,
+  .nav-list a.is-active,
+  .more-nav-list a.is-active,
+  .more-nav[open] summary {
+    color: var(--text);
+    border-color: var(--border-strong);
+    background: rgba(255, 250, 242, 0.94);
+    transform: translateY(-1px);
+  }
+
+  .more-nav {
+    position: relative;
+  }
+
+  .more-nav summary {
+    list-style: none;
+    cursor: pointer;
+    background: rgba(255, 250, 242, 0.64);
+  }
+
+  .more-nav summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .more-nav-list {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 0.45rem);
+    width: min(18rem, 76vw);
+    display: grid;
+    gap: 0.35rem;
+    padding: 0.6rem;
+    border-radius: 1.2rem;
+    border: 1px solid var(--border);
+    background: rgba(255, 249, 241, 0.97);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .more-nav:not([open]) .more-nav-list {
+    display: none;
+  }
+
+  .more-nav-list a {
+    justify-content: flex-start;
+  }
+
+  @media (max-width: 860px) {
+    .header-top,
+    .header-bottom {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .header-booking {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .more-nav {
+      width: 100%;
+    }
+
+    .more-nav summary {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .more-nav-list {
+      left: 0;
+      right: 0;
+      width: 100%;
+    }
+  }
+</style>
+

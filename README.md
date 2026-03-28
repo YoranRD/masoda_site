@@ -1,95 +1,84 @@
-# Les ateliers Masoda - Site statique GitHub Pages
+# Masoda — refonte Astro
 
-Site vitrine statique (HTML, CSS, JS vanilla) prêt pour un hébergement en **GitHub Pages (project site)**.
+Refonte du site Masoda en **Astro**, pensée pour un déploiement sur **GitHub Pages** avec une architecture maintenable, mobile-first et orientée conversion.
 
-## Aperçu local
+L'ancien site HTML/CSS/JS est conservé dans `./legacy-static/`.
 
-Depuis la racine du projet:
+## Démarrage local
+
+Depuis la racine du projet :
 
 ```bash
-python3 -m http.server 8000
+npm install
+npm run dev
 ```
 
-Puis ouvrir:
-- [http://localhost:8000/index.html](http://localhost:8000/index.html)
+Build de production :
 
-## Déploiement GitHub Pages (project site)
+```bash
+npm run build
+```
 
-1. Créer un dépôt GitHub (ex: `masoda_site`).
-2. Pousser ce dossier à la racine du dépôt.
-3. Dans GitHub: `Settings` > `Pages`.
-4. Source: `Deploy from a branch`.
-5. Branch: `main` (ou `master`), folder: `/ (root)`.
-6. Enregistrer.
-7. URL finale attendue:
-   - `https://yoranrd.github.io/masoda_site/`
+Le site de staging visé est :
 
-## Où modifier les infos événement
+- `https://yoranrd.github.io/masoda_site/`
 
-Le fichier central est:
-- `./data/events.json`
+## Déploiement GitHub Pages
 
-Champs importants:
-- `next_event`: prochain atelier affiché sur l'accueil et agenda
-- `events[]`: liste complète des ateliers (avec `status`: `upcoming` ou `past`)
+Le dépôt est configuré pour un déploiement via **GitHub Actions** :
 
-## Où coller l'URL Google Calendar embed
+- workflow : `./.github/workflows/deploy.yml`
+- sortie Astro : `dist/`
+- base path GitHub Pages : `/masoda_site`
 
-Configurer dans:
-- `./assets/js/config.js`
+Dans GitHub :
 
-Variables:
-- `GOOGLE_CALENDAR_EMBED_URL`: URL `src` de l'iframe Google Calendar
-- `GOOGLE_CALENDAR_PUBLIC_URL`: lien public du calendrier (ou ICS)
+1. ouvrir `Settings > Pages`
+2. choisir `GitHub Actions` comme source
 
-Si `GOOGLE_CALENDAR_EMBED_URL` est vide, la page agenda affiche automatiquement un placeholder explicatif.
+## Où modifier les liens essentiels
 
-## How to create & embed Google Form contact
+Le point d'entrée principal est :
 
-1. Créer un Google Form depuis [Google Forms](https://forms.google.com).
-2. Cliquer sur `Envoyer` puis l'icône `<>` (Intégrer HTML).
-3. Copier l'URL `src` de l'iframe.
-4. Coller cette URL dans `./assets/js/config.js`:
-   - `GOOGLE_FORM_EMBED_URL`
-5. Enregistrer et recharger la page `./contact.html`.
+- `./src/data/site.ts`
 
-Comportement:
-- Si `GOOGLE_FORM_EMBED_URL` est vide, un placeholder d'instructions reste affiché.
-- Si `GOOGLE_FORM_EMBED_URL` est renseigné, le formulaire est intégré en iframe responsive.
+Variables à mettre à jour facilement :
 
-## Modifier les couleurs / design
+- `booking.url` : lien de réservation mensuel
+- `socialLinks` : Instagram, TikTok, Pinterest
+- `contactDetails` : e-mail, lieu, calendrier public, formulaire
 
-Le design system est dans:
-- `./assets/css/styles.css`
+## Où modifier les contenus structurés
 
-Modifier les variables CSS dans `:root`:
-- `--bg`, `--cream`, `--orange`, `--pink`, `--ink`, `--accent-blue`
+- `./src/data/workshops.ts` : formats d'ateliers, repères pratiques, éditions archivées
+- `./src/data/boutique.ts` : catégories boutique et placeholders affiliés
+- `./src/data/faq.ts` : questions fréquentes
+- `./src/content/blog/` : articles du journal
 
-## Images
+## Où modifier le design system
 
-Dossier image principal:
-- `./assets/img/`
+- `./src/styles/global.css` : tokens, surfaces, boutons, rythme global
+- `./src/components/` : composants réutilisables
 
-Références:
-- `logo-masoda.png` (logo)
-- `event-paint-jam.jpg` (visuel prochain atelier)
-- `favicon.ico` (favicon placeholder)
-- `og-image.png` (OpenGraph placeholder 1200x630)
-- `placeholder-event.svg` / `placeholder-partner.svg` (temporaires)
+## Assets
 
-Remplacer les placeholders puis mettre à jour les chemins `cover_image` dans `./data/events.json`.
+Les assets réutilisés doivent vivre dans :
 
-## SEO et indexation
+- `./public/images/`
 
-Fichiers inclus:
-- `./sitemap.xml`
-- `./robots.txt`
+Références attendues :
 
-Les fichiers sont déjà renseignés avec `yoranrd/masoda_site`.
+- logo officiel avec halo
+- favicon
+- image OG
+- visuels atelier / univers boutique
 
-## Notes techniques
+## Architecture
 
-- Tous les liens internes sont relatifs (`./page.html`) pour compatibilité project site GitHub Pages.
-- Navigation mobile accessible (menu bouton + `aria-expanded`).
-- Images en lazy-loading sauf image hero prioritaire.
-- Validation de cohérence des données événements dans `./assets/js/main.js` (dates, capacité, statut, durée).
+- `src/layouts` : layout global
+- `src/components` : composants réutilisables
+- `src/pages` : pages Astro
+- `src/content/blog` : contenu éditorial Markdown
+- `src/data` : données métier et contenus structurés
+- `src/config` : configuration site / GitHub Pages
+- `src/lib` : helpers et validations build-time

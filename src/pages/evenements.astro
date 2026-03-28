@@ -1,0 +1,104 @@
+---
+import CTASection from "../components/CTASection.astro";
+import PageHero from "../components/PageHero.astro";
+import SectionIntro from "../components/SectionIntro.astro";
+import WorkshopCard from "../components/WorkshopCard.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { booking, contactDetails } from "../data/site";
+import { archivedEvents, privateEventUseCases } from "../data/workshops";
+import { formatDateRangeFrench } from "../lib/date";
+---
+
+<BaseLayout
+  title="Événements | Masoda"
+  description="Retrouver l'agenda Masoda, l'archive d'éditions passées et les possibilités d'accueil ou de privatisation."
+  canonicalPath="/evenements/"
+>
+  <PageHero
+    eyebrow="Événements"
+    title="Un espace pour voir le rythme du projet sans perdre le CTA principal."
+    intro="Cette page regroupe l'accès à la réservation du moment, l'archive des éditions passées et les pistes pour accueillir ou privatiser un format Masoda."
+    actions={[
+      { href: booking.url, label: booking.label, external: true },
+      { href: contactDetails.calendarPublicUrl, label: "Ouvrir le calendrier", variant: "secondary", external: true }
+    ]}
+    meta={["Agenda", "Archive", "Paris"]}
+  />
+
+  <section class="section section-tight">
+    <div class="container split-grid">
+      <div class="surface-card">
+        <SectionIntro
+          eyebrow="Agenda du moment"
+          title="La réservation reste le point d'entrée prioritaire."
+          intro="Le calendrier peut servir de repère, mais la billetterie du mois reste l'action la plus directe pour rejoindre la prochaine édition."
+        />
+        <p>{booking.note}</p>
+        <div class="button-row">
+          <a class="button button-primary" href={booking.url} target="_blank" rel="noopener noreferrer">
+            Réserver
+          </a>
+          <a class="button button-secondary" href={contactDetails.calendarPublicUrl} target="_blank" rel="noopener noreferrer">
+            Voir le calendrier public
+          </a>
+        </div>
+      </div>
+
+      <iframe
+        class="embed-frame"
+        src={contactDetails.calendarEmbedUrl}
+        title="Calendrier des événements Masoda"
+        loading="lazy"
+      />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionIntro
+        eyebrow="Archive"
+        title="Des éditions passées qui donnent la couleur du projet."
+        intro="Les événements archivés restent visibles pour montrer les formats déjà portés par Masoda, sans prétendre annoncer des dates futures qui ne sont pas encore confirmées."
+      />
+
+      <div class="grid-2">
+        {
+          archivedEvents.map((event) => (
+            <WorkshopCard
+              title={event.title}
+              summary={event.excerpt}
+              meta={formatDateRangeFrench(new Date(event.start), new Date(event.end))}
+              image={event.image}
+              imageAlt={`Visuel associé à ${event.title}`}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionIntro
+        eyebrow="Accueillir"
+        title="Un lieu ou une marque peut aussi accueillir une édition."
+        intro="Les formats peuvent être imaginés en lien avec un lieu, une communauté ou une activation partenaire quand le cadre reste cohérent."
+      />
+
+      <ul class="key-points">
+        {privateEventUseCases.map((item) => <li>{item}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <CTASection
+    eyebrow="Étape suivante"
+    title="Réserver, puis proposer un contexte d'accueil si besoin."
+    body="La page événements garde la hiérarchie business du projet intacte : réservation d'abord, collaboration ensuite."
+    actions={[
+      { href: booking.url, label: booking.label, external: true },
+      { href: "/contact/", label: "Parler d'une édition privée", variant: "secondary" }
+    ]}
+  />
+</BaseLayout>
+

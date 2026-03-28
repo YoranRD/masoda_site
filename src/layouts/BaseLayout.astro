@@ -1,0 +1,63 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+import { getAbsoluteAssetUrl, getCanonicalUrl, siteDefaultDescription, siteDefaultTitle } from "../config/site";
+import { siteIdentity } from "../data/site";
+import { withBase } from "../lib/links";
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonicalPath: string;
+  image?: string;
+  type?: "website" | "article";
+  noindex?: boolean;
+}
+
+const {
+  title = siteDefaultTitle,
+  description = siteDefaultDescription,
+  canonicalPath,
+  image = "/og-image.png",
+  type = "website",
+  noindex = false
+} = Astro.props;
+
+const canonicalUrl = getCanonicalUrl(canonicalPath);
+const openGraphImage = image.startsWith("http") ? image : getAbsoluteAssetUrl(image);
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content={siteIdentity.legalName} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={openGraphImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={openGraphImage} />
+    <meta name="theme-color" content="#f8f3eb" />
+    <link rel="icon" href={withBase("/favicon.ico")} sizes="any" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Aller au contenu principal</a>
+    <Header />
+    <main id="main-content">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
+

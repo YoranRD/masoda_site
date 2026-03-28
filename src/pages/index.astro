@@ -1,0 +1,217 @@
+---
+import { getCollection } from "astro:content";
+import ArticleCard from "../components/ArticleCard.astro";
+import CategoryCard from "../components/CategoryCard.astro";
+import CTASection from "../components/CTASection.astro";
+import PageHero from "../components/PageHero.astro";
+import SectionIntro from "../components/SectionIntro.astro";
+import WorkshopCard from "../components/WorkshopCard.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getFeaturedEntries } from "../lib/blog";
+import { withBase } from "../lib/links";
+import { blogCategoryLabels } from "../data/blog";
+import { boutiqueCategories } from "../data/boutique";
+import { booking, collaborationHighlights, homePillars, socialLinks } from "../data/site";
+import { workshopFormats, archivedEvents } from "../data/workshops";
+
+const blogEntries = await getCollection("blog");
+const featuredEntries = getFeaturedEntries(blogEntries, 3);
+const highlightedArchive = archivedEvents[0];
+---
+
+<BaseLayout
+  title="Masoda | Ateliers créatifs afro-centrés, journal lifestyle et future boutique"
+  description="Masoda rassemble des ateliers créatifs afro-centrés, un journal inspirant et une future boutique affiliée dans un univers chaleureux et premium."
+  canonicalPath="/"
+>
+  <PageHero
+    eyebrow="Hub créatif afro-centré"
+    title="Créer, ralentir, se retrouver."
+    intro="Masoda imagine des ateliers créatifs, des inspirations bien-être et une future boutique curatée pour faire place au beau, au lien et à une énergie plus douce."
+    actions={[
+      { href: booking.url, label: booking.label, external: true },
+      { href: "/ateliers/", label: "Explorer les ateliers", variant: "secondary" }
+    ]}
+    meta={["Paris", "Mobile-first", "Réservation simple"]}
+    image="/images/event-paint-jam.jpg"
+    imageAlt="Visuel d'ambiance d'un atelier Masoda"
+  >
+    <div slot="aside" class="surface-card">
+      <p class="card-meta">Priorité du moment</p>
+      <h2 style="font-size:1.5rem; margin-bottom:0.55rem;">Réserver l'atelier du mois</h2>
+      <p>{booking.note}</p>
+      <a class="button button-secondary" href={booking.url} target="_blank" rel="noopener noreferrer">
+        Ouvrir Billetweb
+      </a>
+    </div>
+
+    <div slot="aside" class="callout">
+      <p class="card-meta">Ce qui guide le site</p>
+      <ul class="simple-list">
+        <li>Réserver un atelier sans détour.</li>
+        <li>Rendre la collaboration claire et crédible.</li>
+        <li>Faire découvrir l'univers Masoda via les réseaux et le journal.</li>
+      </ul>
+    </div>
+  </PageHero>
+
+  <section class="section section-tight">
+    <div class="container">
+      <SectionIntro
+        eyebrow="Positionnement"
+        title="Un hub hybride, pensé d'abord autour des ateliers."
+        intro="Masoda relie trois mouvements complémentaires : des expériences créatives, un univers éditorial inspirant et une boutique affiliée à venir, sans glisser vers le template e-commerce."
+      />
+
+      <div class="grid-3">
+        {
+          homePillars.map((pillar) => (
+            <CategoryCard href={pillar.href} title={pillar.title} summary={pillar.description} statusLabel="Explorer" />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionIntro
+        eyebrow="Ateliers"
+        title="Des formats qui privilégient la présence, l'élan et le partage."
+        intro="Les ateliers Masoda cherchent un équilibre entre esthétique, respiration, musique, conversation et plaisir de faire ensemble."
+      />
+
+      <div class="grid-3">
+        {
+          workshopFormats.map((format) => (
+            <WorkshopCard
+              title={format.title}
+              summary={format.summary}
+              detail={format.detail}
+              tags={[...format.tags]}
+            />
+          ))
+        }
+      </div>
+
+      <div class="split-grid" style="margin-top:1rem;">
+        <div class="surface-card">
+          <p class="card-meta">Édition archivée repère</p>
+          <h3>{highlightedArchive.title}</h3>
+          <p>{highlightedArchive.excerpt}</p>
+          <a class="text-link" href={withBase("/evenements/")}>Voir les éditions passées</a>
+        </div>
+
+        <div class="callout">
+          <p class="card-meta">Collaboration & privatisation</p>
+          <ul class="simple-list">
+            {collaborationHighlights.map((item) => <li>{item}</li>)}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionIntro
+        eyebrow="Boutique à venir"
+        title="Une future curation douce, précise et utile."
+        intro="La boutique Masoda prépare des univers affiliés choisis avec discernement, autour de gestes, d'objets et de matières qui prolongent l'esprit des ateliers."
+      />
+
+      <div class="grid-3">
+        {
+          boutiqueCategories.map((category) => (
+            <CategoryCard
+              href={`/boutique/${category.slug}/`}
+              title={category.title}
+              summary={category.summary}
+              eyebrow="Sélection en préparation"
+              statusLabel="À venir"
+              image={category.image}
+              imageAlt={category.imageAlt}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionIntro
+        eyebrow="Journal"
+        title="Un espace éditorial pour prolonger l'expérience."
+        intro="Le blog accompagne l'univers Masoda avec des articles autour du bien-être, de la motivation, du repos, de la confiance et des ressources personnelles."
+      />
+
+      <div class="grid-3">
+        {
+          featuredEntries.map((entry) => (
+            <ArticleCard
+              href={`/blog/${entry.slug}/`}
+              title={entry.data.title}
+              excerpt={entry.data.excerpt}
+              categoryLabel={blogCategoryLabels[entry.data.category]}
+              publishDate={entry.data.publishDate}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="split-grid">
+        <div class="surface-card">
+          <SectionIntro
+            eyebrow="Collaborer"
+            title="Masoda parle autant aux lieux qu'aux marques et aux créateurs."
+            intro="La proposition est conçue pour rester chaleureuse, claire et premium : assez structurée pour rassurer, assez vivante pour créer un vrai moment."
+          />
+          <ul class="simple-list">
+            {collaborationHighlights.map((highlight) => <li>{highlight}</li>)}
+          </ul>
+          <div class="button-row" style="margin-top:1rem;">
+            <a class="button button-primary" href={withBase("/partenaires/")}>Découvrir les collaborations</a>
+            <a class="button button-secondary" href={withBase("/contact/")}>Prendre contact</a>
+          </div>
+        </div>
+
+        <div class="surface-card">
+          <SectionIntro
+            eyebrow="Réseaux"
+            title="Suivre Masoda là où l'univers continue à vivre."
+            intro="Les réseaux prolongent le projet avec des annonces, des coulisses, des moodboards et des fragments de vie créative."
+          />
+          <div class="grid-2">
+            {
+              socialLinks.map((link) => (
+                <article class="surface-card">
+                  <p class="card-meta">{link.label}</p>
+                  <h3 style="font-size:1.2rem;">{link.handle}</h3>
+                  <p>{link.description}</p>
+                  <a class="text-link" href={link.url} target="_blank" rel="noopener noreferrer">
+                    Ouvrir {link.label}
+                  </a>
+                </article>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTASection
+    eyebrow="Passer à l'action"
+    title="La meilleure porte d'entrée reste l'atelier."
+    body="La réservation reste prioritaire, puis viennent les demandes de collaboration et la découverte du reste de l'univers Masoda."
+    actions={[
+      { href: booking.url, label: booking.label, external: true },
+      { href: "/contact/", label: "Parler d'une collaboration", variant: "secondary" }
+    ]}
+  />
+</BaseLayout>

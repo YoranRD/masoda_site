@@ -1,0 +1,86 @@
+---
+import { getCollection } from "astro:content";
+import ArticleCard from "../../components/ArticleCard.astro";
+import CTASection from "../../components/CTASection.astro";
+import PageHero from "../../components/PageHero.astro";
+import SectionIntro from "../../components/SectionIntro.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { sortBlogEntries } from "../../lib/blog";
+import { blogCategories, blogCategoryLabels } from "../../data/blog";
+import { booking, socialLinks } from "../../data/site";
+
+const entries = sortBlogEntries(await getCollection("blog"));
+const pinterestLink = socialLinks.find((link) => link.label === "Pinterest");
+---
+
+<BaseLayout
+  title="Blog | Masoda"
+  description="Le journal Masoda : bien-être, confiance en soi, motivation, repos, arts et ressources personnelles."
+  canonicalPath="/blog/"
+>
+  <PageHero
+    eyebrow="Journal / Blog"
+    title="Des textes pour prolonger l'univers Masoda avec justesse."
+    intro="Le blog reste éditorial et inspirant avant tout. Il accompagne les ateliers avec des contenus lisibles, sensibles et compatibles avec une stratégie SEO propre."
+    actions={[
+      { href: "#articles", label: "Lire les articles", variant: "secondary" },
+      { href: pinterestLink?.url ?? "/", label: "Ouvrir Pinterest", external: true }
+    ]}
+    meta={["Bien-être", "Motivation", "Repos", "Arts"]}
+  />
+
+  <section class="section section-tight">
+    <div class="container">
+      <SectionIntro
+        eyebrow="Thèmes"
+        title="Les grands sujets que le journal cultive."
+        intro="Le contenu cherche à rester chaleureux, accessible et nuancé, sans tomber dans le jargon ni dans les promesses excessives."
+      />
+
+      <div class="grid-4">
+        {
+          blogCategories.map((category) => (
+            <article class="surface-card">
+              <p class="card-meta">{category.label}</p>
+              <p>{category.description}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="articles">
+    <div class="container">
+      <SectionIntro
+        eyebrow="Articles"
+        title="Un contenu déjà prêt à grandir dans Astro."
+        intro="Les premiers billets donnent une base crédible, réutilisable et extensible pour la suite du journal."
+      />
+
+      <div class="grid-3">
+        {
+          entries.map((entry) => (
+            <ArticleCard
+              href={`/blog/${entry.slug}/`}
+              title={entry.data.title}
+              excerpt={entry.data.excerpt}
+              categoryLabel={blogCategoryLabels[entry.data.category]}
+              publishDate={entry.data.publishDate}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <CTASection
+    eyebrow="Passerelle"
+    title="Le journal accompagne les ateliers, il ne les remplace pas."
+    body="Le contenu éditorial nourrit l'univers de Masoda, mais la porte d'entrée prioritaire reste toujours la réservation d'un atelier."
+    actions={[
+      { href: booking.url, label: booking.label, external: true },
+      { href: "/ateliers/", label: "Voir les ateliers", variant: "secondary" }
+    ]}
+  />
+</BaseLayout>

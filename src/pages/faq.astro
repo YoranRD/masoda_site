@@ -1,0 +1,42 @@
+---
+import CTASection from "../components/CTASection.astro";
+import FaqList from "../components/FaqList.astro";
+import PageHero from "../components/PageHero.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { faqItems } from "../data/faq";
+import { booking } from "../data/site";
+---
+
+<BaseLayout
+  title="FAQ | Masoda"
+  description="Questions fréquentes autour des ateliers, de la réservation, des collaborations et de la future boutique Masoda."
+  canonicalPath="/faq/"
+>
+  <PageHero
+    eyebrow="FAQ"
+    title="Les réponses utiles, sans détour inutile."
+    intro="Cette page rassemble les questions les plus fréquentes autour des ateliers, de la réservation, de la boutique en préparation et des collaborations."
+    actions={[
+      { href: booking.url, label: booking.label, external: true },
+      { href: "/contact/", label: "Poser une question", variant: "secondary" }
+    ]}
+    meta={["Ateliers", "Boutique", "Partenaires"]}
+  />
+
+  <section class="section section-tight">
+    <div class="container">
+      <FaqList items={faqItems} />
+    </div>
+  </section>
+
+  <CTASection
+    eyebrow="Toujours prioritaire"
+    title="Si la réponse ne figure pas ici, l'atelier reste le premier repère."
+    body="Le site a été pensé pour que la réservation et la prise de contact restent plus faciles que la recherche d'information."
+    actions={[
+      { href: booking.url, label: booking.label, external: true },
+      { href: "/contact/", label: "Contacter Masoda", variant: "secondary" }
+    ]}
+  />
+</BaseLayout>
+

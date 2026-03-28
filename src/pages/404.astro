@@ -1,0 +1,28 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { withBase } from "../lib/links";
+---
+
+<BaseLayout
+  title="Page introuvable | Masoda"
+  description="La page demandée n'existe pas ou a été déplacée dans la nouvelle architecture Astro."
+  canonicalPath="/404/"
+  noindex={true}
+>
+  <section class="section">
+    <div class="container">
+      <div class="surface-card" style="max-width:44rem;">
+        <p class="eyebrow">404</p>
+        <h1>Cette page n'est pas disponible.</h1>
+        <p>
+          La refonte Astro a simplifié l'architecture du site. Le plus utile est de repartir vers l'accueil ou vers la page
+          ateliers.
+        </p>
+        <div class="button-row">
+          <a class="button button-primary" href={withBase("/")}>Retour à l'accueil</a>
+          <a class="button button-secondary" href={withBase("/ateliers/")}>Voir les ateliers</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
