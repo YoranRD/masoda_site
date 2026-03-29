@@ -17,8 +17,8 @@ const pinterestLink = socialLinks.find((link) => link.label === "Pinterest");
 >
   <PageHero
     eyebrow="Boutique affiliée à venir"
-    title="Une boutique pensée comme une curation, pas comme un catalogue."
-    intro="Masoda prépare une mini-boutique partenaire autour d'univers choisis avec tact. L'objectif n'est pas d'accumuler des fiches produit, mais de proposer plus tard des sélections réellement cohérentes."
+    title="Une future boutique pensée comme une sélection de confiance."
+    intro="Masoda prépare une mini-boutique affiliée autour d'objets, de matières et de références choisies avec retenue. L'idée n'est pas d'empiler des produits, mais d'ouvrir des pistes cohérentes."
     actions={[
       { href: "/boutique/baya/", label: "Découvrir les catégories", variant: "secondary" },
       { href: pinterestLink?.url ?? "/", label: "Voir Pinterest", external: true }
@@ -27,7 +27,7 @@ const pinterestLink = socialLinks.find((link) => link.label === "Pinterest");
   >
     <div slot="aside" class="callout">
       <p class="card-meta">Cadre actuel</p>
-      <p>Aucun paiement n'est intégré à ce stade. Les liens affiliés ne seront ajoutés qu'une fois les références et les partenaires validés.</p>
+      <p>Aucun achat n'est intégré pour le moment. Les futurs liens n'apparaîtront qu'une fois les références et partenaires réellement validés.</p>
     </div>
   </PageHero>
 
@@ -35,8 +35,8 @@ const pinterestLink = socialLinks.find((link) => link.label === "Pinterest");
     <div class="container">
       <SectionIntro
         eyebrow="Catégories"
-        title="Cinq univers préparés dès maintenant."
-        intro="Chaque catégorie possède sa page dédiée pour accueillir plus tard des sélections et des cartes produits partenaires crédibles."
+        title="Cinq univers déjà prêts à accueillir la suite."
+        intro="Chaque catégorie dispose d'une base claire pour intégrer, plus tard, des cartes produits et des partenaires cohérents."
       />
 
       <div class="grid-3">
@@ -61,8 +61,8 @@ const pinterestLink = socialLinks.find((link) => link.label === "Pinterest");
     <div class="container">
       <SectionIntro
         eyebrow="Ce qui est déjà prêt"
-        title="La structure existe avant l'ajout des produits."
-        intro="Les emplacements, les catégories et la logique éditoriale sont posés pour pouvoir intégrer plus tard de vraies références sans recommencer l'architecture."
+        title="La structure éditoriale est posée avant les produits."
+        intro="Les catégories, les emplacements et le cadre de curation existent déjà pour éviter toute logique catalogue."
       />
 
       <div class="grid-2">
@@ -84,11 +84,11 @@ const pinterestLink = socialLinks.find((link) => link.label === "Pinterest");
   <section class="section">
     <div class="container split-grid">
       <div class="surface-card">
-        <SectionIntro
-          eyebrow="Ligne éditoriale"
-          title="Une sélection lente, explicite et compatible avec la marque."
-          intro="Masoda garde un cadre clair pour éviter l'effet marketplace ou la recommandation opportuniste."
-        />
+      <SectionIntro
+        eyebrow="Ligne éditoriale"
+        title="Une sélection courte, claire et alignée avec la marque."
+        intro="L'objectif est de recommander peu, mais bien, dans un cadre lisible et crédible."
+      />
         <ul class="simple-list">
           <li>Une préférence pour les objets, matières et références qui prolongent réellement l'univers du site.</li>
           <li>Une sélection courte et assumée plutôt qu'un grand nombre de liens peu différenciés.</li>
@@ -99,7 +99,7 @@ const pinterestLink = socialLinks.find((link) => link.label === "Pinterest");
       <div class="callout">
         <p class="card-meta">Passerelle naturelle</p>
         <p>
-          Pinterest et le blog servent déjà de terrain d'inspiration pour préparer la future boutique : moodboards, objets,
+          Pinterest et le journal servent déjà de terrain d'inspiration pour préparer la future boutique : moodboards, objets,
           matières et gestes de mieux-être peuvent y être explorés sans précipiter la recommandation marchande.
         </p>
       </div>
@@ -108,12 +108,11 @@ const pinterestLink = socialLinks.find((link) => link.label === "Pinterest");
 
   <CTASection
     eyebrow="Découvrir"
-    title="En attendant les sélections, l'univers reste déjà accessible."
-    body="Le blog, Pinterest et les ateliers donnent déjà la texture du projet avant l'arrivée des premières références affiliées."
+    title="L'univers Masoda s'explore déjà avant la boutique."
+    body="Le journal, Pinterest et les ateliers donnent déjà le ton en attendant les premières références affiliées."
     actions={[
       { href: "/blog/", label: "Lire le journal", variant: "secondary" },
       { href: pinterestLink?.url ?? "/", label: "Ouvrir Pinterest", external: true }
     ]}
   />
 </BaseLayout>
-

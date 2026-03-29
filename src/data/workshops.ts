@@ -3,19 +3,19 @@ import { ensureChronologicalRange, ensurePositiveInteger, ensureUniqueValues } f
 
 export const atelierBenefits = [
   {
-    title: "Créer sans pression",
+    title: "Créer librement",
     description:
-      "Les formats Masoda privilégient l'expression, l'écoute et la présence plutôt que la performance ou la comparaison."
+      "L'expérience invite à entrer dans le geste sans pression de résultat, avec assez d'espace pour essayer, respirer et apprécier."
   },
   {
-    title: "Retrouver un rythme plus doux",
+    title: "Revenir à une énergie plus posée",
     description:
-      "La musique, les matières et le collectif aident à sortir du pilotage automatique pour revenir à une énergie plus posée."
+      "La musique, les matières et le rythme de l'atelier aident à sortir du mode automatique pour retrouver une présence plus douce."
   },
   {
-    title: "Partager une expérience soignée",
+    title: "Vivre un moment qui reste",
     description:
-      "Chaque atelier cherche un équilibre entre esthétique, convivialité, attention aux détails et chaleur humaine."
+      "L'attention portée à l'ambiance, à l'accueil et au groupe permet de repartir avec plus qu'une activité : un vrai souvenir sensible."
   }
 ] as const;
 
@@ -23,46 +23,46 @@ export const workshopFormats = [
   {
     slug: "paint-jam",
     title: "Paint & Jam",
-    summary: "Peinture, playlist partagée et moment gourmand pour créer dans une ambiance généreuse.",
+    summary: "Peinture, musique et gourmandise partagée dans une ambiance généreuse et soignée.",
     detail:
-      "Un format signature où l'art devient un espace de respiration, d'amour de soi et de communion par la musique.",
-    tags: ["Peinture", "Playlist", "Partage"]
+      "Le format signature de Masoda : un moment créatif qui mêle expression, playlist, esthétique chaleureuse et plaisir d'être ensemble.",
+    tags: ["Peinture", "Musique", "Convivialité"]
   },
   {
     slug: "rituels-couleurs",
     title: "Rituels & couleurs",
-    summary: "Respiration, peinture libre et cercle de partage dans un cadre calme et lumineux.",
+    summary: "Respiration, peinture libre et temps de parole dans un cadre calme, lumineux et enveloppant.",
     detail:
-      "Une proposition plus introspective pour celles et ceux qui cherchent à relier créativité, recentrage et douceur.",
-    tags: ["Respiration", "Couleurs", "Ancrage"]
+      "Une édition plus introspective pour ralentir, se recentrer et laisser la couleur ouvrir un espace de douceur.",
+    tags: ["Respiration", "Couleurs", "Recentrage"]
   },
   {
     slug: "jam-mouvement",
     title: "Jam & mouvement",
-    summary: "Activation corporelle douce, création collective et énergie de groupe.",
+    summary: "Mouvement doux, énergie collective et création pour remettre le corps et l'élan en circulation.",
     detail:
-      "Un format pensé pour remettre le corps en circulation avant de passer au geste créatif et au temps de rencontre.",
+      "Un format vivant qui commence par le corps avant de glisser vers le geste créatif et le partage.",
     tags: ["Mouvement", "Collectif", "Élan"]
   }
 ] as const;
 
 export const atelierAudience = [
-  "Les personnes qui souhaitent souffler, créer et partager sans prérequis artistique.",
-  "Les groupes à la recherche d'un moment chaleureux, esthétique et facile à rejoindre.",
-  "Les lieux et marques qui veulent proposer une expérience premium, humaine et accessible."
+  "Les personnes qui ont envie de créer, souffler et se retrouver sans avoir besoin d'un niveau artistique préalable.",
+  "Les groupes qui recherchent une expérience esthétique, conviviale et facile à rejoindre à Paris.",
+  "Les lieux, marques et communautés qui veulent proposer un moment premium, humain et réellement accessible."
 ] as const;
 
 export const atelierPracticalInfo = [
-  "Les éditions sont pensées pour des groupes à taille humaine afin de préserver la qualité du moment.",
-  "Le lien Billetweb concentre les inscriptions du mois et peut être mis à jour sans toucher à tous les composants.",
-  "Le matériel créatif et les détails pratiques sont précisés sur chaque annonce de réservation.",
-  "Des formats privés, partenaires ou sur mesure peuvent être imaginés à Paris et selon le contexte."
+  "Les éditions privilégient des groupes à taille humaine pour préserver la qualité d'accueil, l'écoute et le confort.",
+  "La billetterie du mois centralise les inscriptions et reste le point d'entrée le plus direct pour réserver.",
+  "Le matériel, le cadre et les informations pratiques sont précisés sur chaque page de réservation.",
+  "Des formats privés, partenaires ou sur mesure peuvent être imaginés à Paris selon le lieu et l'intention."
 ] as const;
 
 export const privateEventUseCases = [
-  "Activation créative pour un lieu culturel, un café ou un espace hybride.",
-  "Édition privée pour une marque lifestyle, beauté, bien-être ou art de vivre.",
-  "Moment de cohésion pour une communauté, un collectif ou un événement de lancement."
+  "Accueillir une expérience créative dans un lieu culturel, un café, un restaurant ou un espace hybride.",
+  "Concevoir une édition privée pour une marque lifestyle, beauté, bien-être ou art de vivre.",
+  "Imaginer un temps fort pour une communauté, un collectif ou un lancement à taille humaine."
 ] as const;
 
 export const archivedEvents = [
@@ -74,7 +74,7 @@ export const archivedEvents = [
     location: contactDetails.location,
     capacity: 12,
     excerpt:
-      "Une édition dédiée à l'amour de soi, portée par la peinture, une playlist collaborative et une atmosphère afroféminine.",
+      "Une édition autour de l'amour de soi, portée par la peinture, une playlist habitée et une atmosphère chaleureuse.",
     image: "/images/event-paint-jam.jpg",
     bookingUrl: booking.url
   },
@@ -86,7 +86,7 @@ export const archivedEvents = [
     location: contactDetails.location,
     capacity: 14,
     excerpt:
-      "Un atelier peinture guidé autour des affirmations positives, avec une place donnée au rythme, à la musique et à l'estime de soi."
+      "Un atelier peinture guidé pour remettre l'estime de soi, la couleur et le plaisir de créer au centre du moment."
   },
   {
     id: "rituels-couleurs-2025-09-20",
@@ -95,7 +95,7 @@ export const archivedEvents = [
     end: "2025-09-20T18:00:00+02:00",
     location: "Studio communautaire, Belleville, Paris, France",
     capacity: 10,
-    excerpt: "Une parenthèse créative avec respiration, peinture libre et cercle de partage."
+    excerpt: "Une parenthèse créative mêlant respiration, peinture libre et échange dans une ambiance douce."
   },
   {
     id: "jam-mouvement-2025-06-14",
@@ -104,7 +104,7 @@ export const archivedEvents = [
     end: "2025-06-14T13:30:00+02:00",
     location: "Maison de quartier, Paris 11e, France",
     capacity: 16,
-    excerpt: "Une rencontre art et mouvement doux prolongée par un temps de brunch léger."
+    excerpt: "Une rencontre entre mouvement doux, création collective et brunch léger pour relancer l'élan du week-end."
   }
 ] as const;
 
@@ -122,4 +122,3 @@ archivedEvents.forEach((event) => {
   ensureChronologicalRange(event.start, event.end, event.title);
   ensurePositiveInteger(event.capacity, `${event.title}: capacité`);
 });
-

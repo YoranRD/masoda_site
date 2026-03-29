@@ -1,7 +1,7 @@
 ---
 title: "Accorder du repos à sa créativité sans culpabiliser"
-description: "Une réflexion simple sur le repos créatif, la fatigue et la manière de laisser une pratique respirer sans la quitter."
-excerpt: "Le repos n'interrompt pas forcément l'élan créatif. Il peut au contraire rendre au geste sa disponibilité, sa curiosité et son relief."
+description: "Une réflexion sur le repos créatif, la fatigue et la manière de laisser une pratique respirer sans la perdre."
+excerpt: "Le repos ne coupe pas forcément l'élan créatif. Il peut lui rendre de l'air, de la curiosité et une disponibilité plus juste."
 publishDate: 2026-03-18
 category: "repos"
 tags:
@@ -62,4 +62,3 @@ Quand la reprise reste légère, l'élan a plus de chance de revenir naturelleme
 Les ateliers ne cherchent pas à impressionner. Ils essaient plutôt de créer un cadre où le geste peut réapparaître sans violence. C'est aussi cela, prendre soin d'une créativité : lui laisser assez d'air pour qu'elle ne se transforme pas en obligation sèche.
 
 Le repos n'est donc pas l'opposé de la création. Il peut être l'une de ses conditions les plus simples et les plus précieuses.
-

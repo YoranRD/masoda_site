@@ -16,8 +16,8 @@ import { formatDateRangeFrench } from "../lib/date";
 >
   <PageHero
     eyebrow="Événements"
-    title="Un espace pour voir le rythme du projet sans perdre le CTA principal."
-    intro="Cette page regroupe l'accès à la réservation du moment, l'archive des éditions passées et les pistes pour accueillir ou privatiser un format Masoda."
+    title="Retrouver le rythme des éditions Masoda."
+    intro="Cette page rassemble la réservation du moment, le calendrier public et l'archive des formats déjà passés par Masoda."
     actions={[
       { href: booking.url, label: booking.label, external: true },
       { href: contactDetails.calendarPublicUrl, label: "Ouvrir le calendrier", variant: "secondary", external: true }
@@ -30,13 +30,13 @@ import { formatDateRangeFrench } from "../lib/date";
       <div class="surface-card">
         <SectionIntro
           eyebrow="Agenda du moment"
-          title="La réservation reste le point d'entrée prioritaire."
-          intro="Le calendrier peut servir de repère, mais la billetterie du mois reste l'action la plus directe pour rejoindre la prochaine édition."
+          title="La prochaine édition reste la priorité."
+          intro="Le calendrier donne une vue d'ensemble, mais la billetterie reste le chemin le plus direct pour rejoindre l'expérience."
         />
         <p>{booking.note}</p>
         <div class="button-row">
           <a class="button button-primary" href={booking.url} target="_blank" rel="noopener noreferrer">
-            Réserver
+            Réserver la prochaine édition
           </a>
           <a class="button button-secondary" href={contactDetails.calendarPublicUrl} target="_blank" rel="noopener noreferrer">
             Voir le calendrier public
@@ -57,8 +57,8 @@ import { formatDateRangeFrench } from "../lib/date";
     <div class="container">
       <SectionIntro
         eyebrow="Archive"
-        title="Des éditions passées qui donnent la couleur du projet."
-        intro="Les événements archivés restent visibles pour montrer les formats déjà portés par Masoda, sans prétendre annoncer des dates futures qui ne sont pas encore confirmées."
+        title="Des éditions passées qui donnent le ton."
+        intro="Ces archives montrent l'esprit du projet et les formats déjà portés, sans annoncer des dates non confirmées."
       />
 
       <div class="grid-2">
@@ -81,8 +81,8 @@ import { formatDateRangeFrench } from "../lib/date";
     <div class="container">
       <SectionIntro
         eyebrow="Accueillir"
-        title="Un lieu ou une marque peut aussi accueillir une édition."
-        intro="Les formats peuvent être imaginés en lien avec un lieu, une communauté ou une activation partenaire quand le cadre reste cohérent."
+        title="Un lieu ou une marque peut accueillir une édition Masoda."
+        intro="Quand le contexte est juste, certains formats peuvent être adaptés pour une communauté, un lieu ou une activation partenaire."
       />
 
       <ul class="key-points">
@@ -93,12 +93,11 @@ import { formatDateRangeFrench } from "../lib/date";
 
   <CTASection
     eyebrow="Étape suivante"
-    title="Réserver, puis proposer un contexte d'accueil si besoin."
-    body="La page événements garde la hiérarchie business du projet intacte : réservation d'abord, collaboration ensuite."
+    title="Réserver d'abord, imaginer un accueil ensuite."
+    body="La hiérarchie reste claire : rejoindre la prochaine édition, puis ouvrir une discussion sur un format privé ou partenaire."
     actions={[
       { href: booking.url, label: booking.label, external: true },
       { href: "/contact/", label: "Parler d'une édition privée", variant: "secondary" }
     ]}
   />
 </BaseLayout>
-

@@ -26,31 +26,31 @@ const highlightedArchive = archivedEvents[0];
 >
   <PageHero
     eyebrow="Hub créatif afro-centré"
-    title="Créer, ralentir, se retrouver."
-    intro="Masoda imagine des ateliers créatifs, des inspirations bien-être et une future boutique curatée pour faire place au beau, au lien et à une énergie plus douce."
+    title="Des ateliers pour créer, respirer et se retrouver."
+    intro="Masoda réunit des ateliers créatifs afro-centrés, un journal lifestyle sensible et une future curation choisie avec soin. Le cœur du projet reste simple : offrir des moments qui font du bien et donnent envie de revenir."
     actions={[
       { href: booking.url, label: booking.label, external: true },
-      { href: "/ateliers/", label: "Explorer les ateliers", variant: "secondary" }
+      { href: "/ateliers/", label: "Découvrir les ateliers", variant: "secondary" }
     ]}
-    meta={["Paris", "Mobile-first", "Réservation simple"]}
+    meta={["Paris", "Groupes à taille humaine", "Réservation directe"]}
     image="/images/event-paint-jam.jpg"
     imageAlt="Visuel d'ambiance d'un atelier Masoda"
   >
     <div slot="aside" class="surface-card">
       <p class="card-meta">Priorité du moment</p>
-      <h2 style="font-size:1.5rem; margin-bottom:0.55rem;">Réserver l'atelier du mois</h2>
+      <h2 style="font-size:1.5rem; margin-bottom:0.55rem;">Réserver la prochaine édition</h2>
       <p>{booking.note}</p>
       <a class="button button-secondary" href={booking.url} target="_blank" rel="noopener noreferrer">
-        Ouvrir Billetweb
+        Accéder à la billetterie
       </a>
     </div>
 
     <div slot="aside" class="callout">
-      <p class="card-meta">Ce qui guide le site</p>
+      <p class="card-meta">Ce qui compte ici</p>
       <ul class="simple-list">
-        <li>Réserver un atelier sans détour.</li>
-        <li>Rendre la collaboration claire et crédible.</li>
-        <li>Faire découvrir l'univers Masoda via les réseaux et le journal.</li>
+        <li>Réserver un atelier en quelques secondes.</li>
+        <li>Comprendre vite comment collaborer.</li>
+        <li>Retrouver l'univers Masoda via le journal et les réseaux.</li>
       </ul>
     </div>
   </PageHero>
@@ -59,8 +59,8 @@ const highlightedArchive = archivedEvents[0];
     <div class="container">
       <SectionIntro
         eyebrow="Positionnement"
-        title="Un hub hybride, pensé d'abord autour des ateliers."
-        intro="Masoda relie trois mouvements complémentaires : des expériences créatives, un univers éditorial inspirant et une boutique affiliée à venir, sans glisser vers le template e-commerce."
+        title="Un univers hybride, avec l'atelier au premier plan."
+        intro="Masoda fait tenir ensemble l'expérience vécue, l'inspiration éditoriale et une future curation sans diluer sa promesse principale : venir créer et partager."
       />
 
       <div class="grid-3">
@@ -77,8 +77,8 @@ const highlightedArchive = archivedEvents[0];
     <div class="container">
       <SectionIntro
         eyebrow="Ateliers"
-        title="Des formats qui privilégient la présence, l'élan et le partage."
-        intro="Les ateliers Masoda cherchent un équilibre entre esthétique, respiration, musique, conversation et plaisir de faire ensemble."
+        title="Des ateliers qui privilégient la présence, le plaisir et le lien."
+        intro="Chaque format associe ambiance soignée, geste créatif, musique et qualité d'accueil pour proposer un moment désirable et facile à rejoindre."
       />
 
       <div class="grid-3">
@@ -96,10 +96,10 @@ const highlightedArchive = archivedEvents[0];
 
       <div class="split-grid" style="margin-top:1rem;">
         <div class="surface-card">
-          <p class="card-meta">Édition archivée repère</p>
+          <p class="card-meta">Une édition qui donne le ton</p>
           <h3>{highlightedArchive.title}</h3>
           <p>{highlightedArchive.excerpt}</p>
-          <a class="text-link" href={withBase("/evenements/")}>Voir les éditions passées</a>
+          <a class="text-link" href={withBase("/evenements/")}>Parcourir les éditions passées</a>
         </div>
 
         <div class="callout">
@@ -116,8 +116,8 @@ const highlightedArchive = archivedEvents[0];
     <div class="container">
       <SectionIntro
         eyebrow="Boutique à venir"
-        title="Une future curation douce, précise et utile."
-        intro="La boutique Masoda prépare des univers affiliés choisis avec discernement, autour de gestes, d'objets et de matières qui prolongent l'esprit des ateliers."
+        title="Une future curation pensée avec retenue."
+        intro="La boutique Masoda se prépare comme une sélection affiliée courte, esthétique et utile, fidèle à l'esprit du projet."
       />
 
       <div class="grid-3">
@@ -142,8 +142,8 @@ const highlightedArchive = archivedEvents[0];
     <div class="container">
       <SectionIntro
         eyebrow="Journal"
-        title="Un espace éditorial pour prolonger l'expérience."
-        intro="Le blog accompagne l'univers Masoda avec des articles autour du bien-être, de la motivation, du repos, de la confiance et des ressources personnelles."
+        title="Un journal pour prolonger l'expérience Masoda."
+        intro="Le blog accompagne les ateliers avec des articles autour du bien-être, de la motivation, du repos, de la confiance et des ressources personnelles."
       />
 
       <div class="grid-3">
@@ -168,8 +168,8 @@ const highlightedArchive = archivedEvents[0];
         <div class="surface-card">
           <SectionIntro
             eyebrow="Collaborer"
-            title="Masoda parle autant aux lieux qu'aux marques et aux créateurs."
-            intro="La proposition est conçue pour rester chaleureuse, claire et premium : assez structurée pour rassurer, assez vivante pour créer un vrai moment."
+            title="Masoda s'adresse aussi aux lieux, aux marques et aux communautés."
+            intro="L'univers est assez clair pour rassurer, assez vivant pour donner envie de s'associer au projet."
           />
           <ul class="simple-list">
             {collaborationHighlights.map((highlight) => <li>{highlight}</li>)}
@@ -183,8 +183,8 @@ const highlightedArchive = archivedEvents[0];
         <div class="surface-card">
           <SectionIntro
             eyebrow="Réseaux"
-            title="Suivre Masoda là où l'univers continue à vivre."
-            intro="Les réseaux prolongent le projet avec des annonces, des coulisses, des moodboards et des fragments de vie créative."
+            title="Retrouver Masoda là où le projet continue à vivre."
+            intro="Les réseaux montrent l'ambiance, les annonces, les inspirations et les prolongements visuels du projet."
           />
           <div class="grid-2">
             {
@@ -207,8 +207,8 @@ const highlightedArchive = archivedEvents[0];
 
   <CTASection
     eyebrow="Passer à l'action"
-    title="La meilleure porte d'entrée reste l'atelier."
-    body="La réservation reste prioritaire, puis viennent les demandes de collaboration et la découverte du reste de l'univers Masoda."
+    title="Entrer dans l'univers Masoda commence par l'atelier."
+    body="La réservation reste la première action à rendre évidente, avant les collaborations et la découverte du reste de l'univers."
     actions={[
       { href: booking.url, label: booking.label, external: true },
       { href: "/contact/", label: "Parler d'une collaboration", variant: "secondary" }

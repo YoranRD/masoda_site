@@ -6,23 +6,23 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { booking, collaborationHighlights, contactDetails, socialLinks } from "../data/site";
 
 const partnerReasons = [
-  "Une proposition claire, chaleureuse et identifiable dès les premiers écrans.",
-  "Un univers qui croise créativité, bien-être, lifestyle et communauté sans devenir confus.",
-  "Une direction visuelle premium mais accessible, adaptée à des collaborations éditoriales ou expérientielles."
+  "Une proposition claire, chaleureuse et identifiable dès les premiers échanges.",
+  "Un univers qui relie créativité, bien-être, lifestyle et communauté sans perdre en lisibilité.",
+  "Une direction visuelle premium mais accessible, adaptée à des collaborations éditoriales, culturelles ou expérientielles."
 ];
 
 const collaborationTypes = [
   {
     title: "Lieux & hospitality",
-    description: "Accueillir une édition Masoda dans un lieu qui valorise la convivialité, la culture ou l'expérience sensible."
+    description: "Accueillir une édition Masoda dans un lieu qui valorise la convivialité, la culture et la qualité d'expérience."
   },
   {
     title: "Marques & activations",
-    description: "Imaginer une collaboration éditoriale ou un format événementiel cohérent avec le ton de Masoda."
+    description: "Imaginer une collaboration éditoriale ou un format événementiel cohérent avec l'esthétique et le ton de Masoda."
   },
   {
     title: "Créateurs & communautés",
-    description: "Co-construire une rencontre, un atelier spécial ou une présence de marque à taille humaine."
+    description: "Co-construire une rencontre, un atelier spécial ou une présence de marque à taille humaine et à forte personnalité."
   }
 ];
 
@@ -36,10 +36,10 @@ const instagramLink = socialLinks.find((link) => link.label === "Instagram");
 >
   <PageHero
     eyebrow="Partenaires"
-    title="Collaborer avec Masoda doit rester simple, crédible et premium."
-    intro="Le site donne une place claire aux demandes de collaboration pour que les lieux, marques et créateurs comprennent rapidement comment le projet peut prendre forme avec eux."
+    title="Collaborer avec Masoda doit sembler évident dès les premiers échanges."
+    intro="Masoda propose un univers clair, chaleureux et crédible pour des lieux, des marques et des créateurs qui cherchent une expérience créative à forte identité."
     actions={[
-      { href: "/contact/", label: "Prendre contact" },
+      { href: "/contact/", label: "Présenter un projet" },
       {
         href: `mailto:${contactDetails.email}?subject=Collaboration%20Masoda`,
         label: "Écrire par e-mail",
@@ -51,10 +51,10 @@ const instagramLink = socialLinks.find((link) => link.label === "Instagram");
   >
     <div slot="aside" class="surface-card">
       <p class="card-meta">Ancrage actuel</p>
-      <h2 style="font-size:1.45rem; margin-bottom:0.55rem;">Paris comme base, l'atelier comme moteur.</h2>
+      <h2 style="font-size:1.45rem; margin-bottom:0.55rem;">Paris comme ancrage, l'atelier comme point de départ.</h2>
       <p>
-        Certaines éditions se sont tenues autour du cadre BMK Folie-Bamako. D'autres terrains de collaboration restent
-        possibles tant qu'ils respectent l'identité du projet.
+        Le projet se déploie depuis Paris autour des ateliers. D'autres terrains de collaboration sont possibles dès lors
+        qu'ils respectent l'identité, le rythme et la qualité d'expérience portés par Masoda.
       </p>
     </div>
   </PageHero>
@@ -63,8 +63,8 @@ const instagramLink = socialLinks.find((link) => link.label === "Instagram");
     <div class="container">
       <SectionIntro
         eyebrow="Formats de collaboration"
-        title="Trois portes d'entrée pour travailler avec Masoda."
-        intro="La collaboration peut prendre la forme d'une activation, d'un accueil, d'un contenu ou d'une expérience sur mesure."
+        title="Trois manières de collaborer avec Masoda."
+        intro="Accueil de format, activation de marque, temps fort communautaire : la collaboration peut rester souple sans perdre en clarté."
       />
 
       <div class="grid-3">
@@ -85,8 +85,8 @@ const instagramLink = socialLinks.find((link) => link.label === "Instagram");
       <div class="surface-card">
         <SectionIntro
           eyebrow="Pourquoi Masoda"
-          title="Une proposition qui évite l'entre-deux flou."
-          intro="Le projet garde une ligne claire : chaleureux, esthétique, facile à comprendre et ancré dans une vraie expérience."
+          title="Une proposition identifiable, sans flou de positionnement."
+          intro="Masoda articule création, bien-être et lifestyle avec une esthétique assumée et une expérience réellement vécue."
         />
         <ul class="simple-list">
           {partnerReasons.map((reason) => <li>{reason}</li>)}
@@ -106,15 +106,15 @@ const instagramLink = socialLinks.find((link) => link.label === "Instagram");
     <div class="container">
       <SectionIntro
         eyebrow="Contact utile"
-        title="Le plus direct reste l'e-mail, puis Instagram."
-        intro="La demande peut être simple : contexte, type de collaboration envisagé, horizon de date et attentes principales."
+        title="Présenter un contexte, une date et une intention suffit."
+        intro="Un premier message clair permet de cadrer rapidement si la collaboration a du sens."
       />
 
       <div class="grid-2">
         <article class="surface-card">
           <p class="card-meta">E-mail</p>
           <h3>{contactDetails.email}</h3>
-          <p>Le canal le plus simple pour cadrer une demande, un brief ou une première prise de contact.</p>
+          <p>Le canal le plus direct pour partager un brief, un lieu, un calendrier ou une intention de collaboration.</p>
           <a class="text-link" href={`mailto:${contactDetails.email}?subject=Collaboration%20Masoda`}>
             Envoyer un message
           </a>
@@ -123,7 +123,7 @@ const instagramLink = socialLinks.find((link) => link.label === "Instagram");
         <article class="surface-card">
           <p class="card-meta">Instagram</p>
           <h3>{instagramLink?.handle}</h3>
-          <p>Utile pour voir l'ambiance générale et poursuivre la conversation après un premier échange.</p>
+          <p>Utile pour sentir l'ambiance visuelle du projet et prolonger l'échange avec des références concrètes.</p>
           <a class="text-link" href={instagramLink?.url ?? "/"} target="_blank" rel="noopener noreferrer">
             Ouvrir Instagram
           </a>
@@ -134,12 +134,11 @@ const instagramLink = socialLinks.find((link) => link.label === "Instagram");
 
   <CTASection
     eyebrow="Priorité"
-    title="Le site favorise d'abord la réservation, puis la collaboration."
-    body="Masoda garde cette hiérarchie partout dans l'interface pour rester lisible : ateliers d'abord, partenariats ensuite, réseaux en troisième porte d'entrée."
+    title="Masoda reste d'abord un projet d'ateliers, puis un partenaire de collaboration."
+    body="Cette hiérarchie garde le site lisible, tout en laissant une porte d'entrée claire aux demandes sérieuses."
     actions={[
       { href: booking.url, label: booking.label, external: true },
       { href: "/contact/", label: "Envoyer une demande", variant: "secondary" }
     ]}
   />
 </BaseLayout>
-

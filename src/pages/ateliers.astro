@@ -25,20 +25,20 @@ import { formatDateRangeFrench } from "../lib/date";
 >
   <PageHero
     eyebrow="Ateliers"
-    title="La page la plus importante du site reste celle-ci."
-    intro="Masoda propose des expériences créatives afro-centrées où l'on vient pour souffler, créer, écouter, partager et repartir avec quelque chose qui dure au-delà du moment."
+    title="Des ateliers pensés pour créer, souffler et partager."
+    intro="Masoda propose des expériences créatives afro-centrées où l'on vient autant pour le geste que pour l'ambiance : une parenthèse soignée, chaleureuse et accessible."
     actions={[
       { href: booking.url, label: booking.label, external: true },
-      { href: "/evenements/", label: "Voir les événements", variant: "secondary" }
+      { href: "/evenements/", label: "Voir les éditions passées", variant: "secondary" }
     ]}
     meta={["Réservation simple", "Paris", "Groupes à taille humaine"]}
   >
     <div slot="aside" class="surface-card">
       <p class="card-meta">Réservation</p>
-      <h2 style="font-size:1.45rem; margin-bottom:0.55rem;">Billetterie du moment</h2>
-      <p>Le lien Billetweb est le point d'entrée principal. Il est mis à jour dans une seule configuration du projet.</p>
+      <h2 style="font-size:1.45rem; margin-bottom:0.55rem;">Billetterie de la prochaine édition</h2>
+      <p>La billetterie du moment concentre la prochaine date, les informations pratiques et le cadre de réservation.</p>
       <a class="button button-secondary" href={booking.url} target="_blank" rel="noopener noreferrer">
-        Ouvrir la billetterie
+        Accéder à la billetterie
       </a>
     </div>
   </PageHero>
@@ -47,8 +47,8 @@ import { formatDateRangeFrench } from "../lib/date";
     <div class="container">
       <SectionIntro
         eyebrow="Promesse"
-        title="Ce que l'expérience cherche à créer."
-        intro="Chaque atelier est pensé pour préserver la chaleur du groupe tout en laissant à chacune et chacun un vrai espace intérieur."
+        title="Ce que l'expérience cherche à laisser."
+        intro="Au-delà de l'activité, chaque atelier travaille une sensation de présence, de beauté simple et de lien."
       />
 
       <div class="grid-3">
@@ -69,8 +69,8 @@ import { formatDateRangeFrench } from "../lib/date";
       <div class="surface-card">
         <SectionIntro
           eyebrow="Pour qui"
-          title="Des formats accessibles, sans prérequis de performance."
-          intro="Le projet reste ouvert à des personnes venues pour créer, relâcher la pression, rencontrer ou simplement vivre un moment bien pensé."
+          title="Des formats accessibles, sans performance à prouver."
+          intro="L'expérience reste ouverte aux personnes qui veulent créer, souffler ou partager un beau moment, même sans pratique artistique."
         />
         <ul class="simple-list">
           {atelierAudience.map((item) => <li>{item}</li>)}
@@ -80,8 +80,8 @@ import { formatDateRangeFrench } from "../lib/date";
       <div class="surface-card">
         <SectionIntro
           eyebrow="Infos pratiques"
-          title="Des repères simples avant de réserver."
-          intro="La lisibilité reste essentielle, sur mobile comme sur desktop."
+          title="Des repères clairs avant de réserver."
+          intro="L'information reste volontairement simple pour laisser la place à l'envie, pas à la confusion."
         />
         <ul class="simple-list">
           {atelierPracticalInfo.map((item) => <li>{item}</li>)}
@@ -95,7 +95,7 @@ import { formatDateRangeFrench } from "../lib/date";
       <SectionIntro
         eyebrow="Formats"
         title="Trois manières d'entrer dans l'univers Masoda."
-        intro="Les intitulés évoluent selon les cycles, mais l'esprit reste le même : relier créativité, sensation de mieux-être et qualité de présence."
+        intro="Les intitulés évoluent selon les cycles, mais l'intention reste la même : relier créativité, mieux-être et qualité de présence."
       />
 
       <div class="grid-3">
@@ -117,8 +117,8 @@ import { formatDateRangeFrench } from "../lib/date";
     <div class="container">
       <SectionIntro
         eyebrow="Éditions archivées"
-        title="Quelques formats déjà passés par Masoda."
-        intro="Les dates ci-dessous servent de repères éditoriaux et montrent le type d'expériences déjà proposées."
+        title="Quelques éditions déjà portées par Masoda."
+        intro="Ces repères montrent l'esprit des formats déjà proposés sans annoncer ce qui n'est pas encore confirmé."
       />
 
       <div class="grid-2">
@@ -142,8 +142,8 @@ import { formatDateRangeFrench } from "../lib/date";
       <div class="surface-card">
         <SectionIntro
           eyebrow="Privatiser"
-          title="Masoda peut aussi prendre place ailleurs."
-          intro="Au-delà de la billetterie publique, certains formats peuvent être adaptés à un lieu, une marque ou un collectif."
+          title="Masoda peut aussi se vivre en format privé ou partenaire."
+          intro="Certaines propositions peuvent être adaptées à un lieu, une marque ou une communauté lorsque le contexte est cohérent."
         />
         <ul class="simple-list">
           {privateEventUseCases.map((item) => <li>{item}</li>)}
@@ -171,12 +171,11 @@ import { formatDateRangeFrench } from "../lib/date";
 
   <CTASection
     eyebrow="Réserver"
-    title="Quand l'envie est là, la billetterie doit rester évidente."
-    body="Le site laisse volontairement peu d'obstacles entre la découverte de Masoda et l'inscription à la prochaine édition."
+    title="Quand l'envie est là, la réservation doit être immédiate."
+    body="Tout est conçu pour laisser peu de distance entre la découverte de l'atelier et l'inscription à la prochaine édition."
     actions={[
       { href: booking.url, label: booking.label, external: true },
       { href: "/contact/", label: "Imaginer une édition privée", variant: "secondary" }
     ]}
   />
 </BaseLayout>
-

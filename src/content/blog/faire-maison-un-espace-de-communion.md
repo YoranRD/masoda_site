@@ -1,7 +1,7 @@
 ---
 title: "Faire de la maison un espace de communion"
-description: "Quelques pistes pour créer chez soi une ambiance plus accueillante, plus partagée et plus vivante."
-excerpt: "Un espace n'a pas besoin d'être spectaculaire pour devenir chaleureux. Il suffit parfois d'installer quelques repères de présence, de rythme et de générosité."
+description: "Des pistes sensibles pour rendre un intérieur plus accueillant, plus vivant et plus propice au partage."
+excerpt: "Un lieu n'a pas besoin d'être spectaculaire pour devenir chaleureux. Quelques gestes justes suffisent à installer présence, rythme et générosité."
 publishDate: 2026-03-02
 category: "partage-communion"
 tags:
@@ -55,4 +55,3 @@ Un lieu devient souvent plus commun qu'intime lorsqu'il exprime une générosit�
 Les ateliers Masoda travaillent aussi cette idée. L'ambiance n'est pas un décor ajouté à la fin. Elle prépare la qualité du moment. Le groupe, la musique, la matière et les détails d'accueil changent la façon dont on ose parler, créer et se relâcher.
 
 Créer un espace de communion chez soi, c'est prolonger ce principe à petite échelle : faire en sorte qu'un lieu soutienne le lien au lieu de simplement l'héberger.
-

@@ -89,36 +89,56 @@ const hasAside = Astro.slots.has("aside");
 
 <style>
   .page-hero {
-    padding: clamp(2.2rem, 6vw, 4.5rem) 0 1.4rem;
+    position: relative;
+    padding: clamp(2.7rem, 7vw, 5.2rem) 0 1.8rem;
   }
 
   .page-hero-compact {
-    padding-top: 2rem;
+    padding-top: 2.2rem;
+  }
+
+  .page-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 78%;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at 10% 14%, rgba(207, 117, 72, 0.12), transparent 32%),
+      radial-gradient(circle at 92% 10%, rgba(79, 102, 167, 0.08), transparent 20%);
+    opacity: 0.95;
   }
 
   .hero-grid {
     display: grid;
-    gap: 1.25rem;
+    gap: 1.5rem;
     align-items: start;
   }
 
   .hero-copy {
     display: grid;
-    gap: 1rem;
+    gap: 1.1rem;
+    align-content: start;
   }
 
   .hero-copy h1 {
     margin-bottom: 0;
+    max-width: 11ch;
   }
 
   .hero-intro {
     margin: 0;
-    max-width: 34rem;
-    font-size: 1.08rem;
+    max-width: 35rem;
+    font-size: 1.14rem;
+    line-height: 1.7;
   }
 
   .hero-meta {
     margin: 0;
+  }
+
+  .hero-copy :global(.button-row) {
+    padding-top: 0.15rem;
   }
 
   .hero-side {
@@ -128,17 +148,20 @@ const hasAside = Astro.slots.has("aside");
 
   .hero-visual {
     margin: 0;
+    padding: 0.75rem;
     border-radius: var(--radius-xl);
     overflow: hidden;
     border: 1px solid rgba(201, 164, 127, 0.48);
     box-shadow: var(--shadow-soft);
-    background: linear-gradient(180deg, rgba(255, 250, 242, 0.6), rgba(255, 250, 242, 0.08));
+    background:
+      linear-gradient(180deg, rgba(255, 252, 247, 0.95), rgba(247, 237, 226, 0.74));
   }
 
   .hero-visual img {
     width: 100%;
     aspect-ratio: 4 / 5;
     object-fit: cover;
+    border-radius: calc(var(--radius-xl) - 0.5rem);
   }
 
   .hero-aside {
@@ -148,9 +171,18 @@ const hasAside = Astro.slots.has("aside");
 
   @media (min-width: 900px) {
     .hero-grid {
-      grid-template-columns: minmax(0, 1.18fr) minmax(320px, 0.82fr);
-      gap: 2rem;
+      grid-template-columns: minmax(0, 1.1fr) minmax(340px, 0.9fr);
+      gap: 2.2rem;
+    }
+  }
+
+  @media (max-width: 740px) {
+    .hero-copy h1 {
+      max-width: 12ch;
+    }
+
+    .hero-intro {
+      font-size: 1.04rem;
     }
   }
 </style>
-

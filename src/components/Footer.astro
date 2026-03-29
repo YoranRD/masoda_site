@@ -13,8 +13,8 @@ const year = new Date().getFullYear();
         {siteIdentity.description}
       </p>
       <p class="footer-note">
-        Certaines futures sélections boutique pourront inclure des liens affiliés, toujours choisis avec discernement
-        et sans surcoût pour la personne qui commande.
+        Certaines futures sélections boutique pourront inclure des liens affiliés, mentionnés avec clarté et choisis pour
+        leur cohérence avec l'univers Masoda.
       </p>
     </div>
 
@@ -57,18 +57,18 @@ const year = new Date().getFullYear();
 
 <style>
   .site-footer {
-    margin-top: 4rem;
-    padding-top: 2.4rem;
+    margin-top: 5rem;
+    padding-top: 2.8rem;
     border-top: 1px solid var(--border);
     background:
-      linear-gradient(180deg, rgba(248, 243, 235, 0.2) 0%, rgba(242, 233, 220, 0.7) 100%),
-      rgba(255, 250, 242, 0.85);
+      radial-gradient(circle at top right, rgba(79, 102, 167, 0.06), transparent 18%),
+      linear-gradient(180deg, rgba(255, 251, 245, 0.65) 0%, rgba(244, 232, 219, 0.82) 100%);
   }
 
   .footer-grid {
     display: grid;
     grid-template-columns: minmax(0, 1.35fr) repeat(4, minmax(0, 1fr));
-    gap: 1.35rem;
+    gap: 1.55rem;
   }
 
   .footer-title {
@@ -99,13 +99,17 @@ const year = new Date().getFullYear();
     font-size: 0.95rem;
   }
 
+  .footer-intro {
+    max-width: 23rem;
+  }
+
   .footer-bottom {
     display: flex;
     justify-content: space-between;
     gap: 1rem;
     flex-wrap: wrap;
-    margin-top: 2rem;
-    padding: 1rem 0 1.4rem;
+    margin-top: 2.4rem;
+    padding: 1rem 0 1.6rem;
     border-top: 1px solid rgba(201, 164, 127, 0.45);
     color: var(--text-soft);
     font-size: 0.95rem;
@@ -123,4 +127,3 @@ const year = new Date().getFullYear();
     }
   }
 </style>
-

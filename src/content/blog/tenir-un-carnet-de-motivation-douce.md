@@ -1,7 +1,7 @@
 ---
 title: "Tenir un carnet de motivation douce"
-description: "Pourquoi un carnet simple peut aider à garder le cap sans transformer la motivation en injonction."
-excerpt: "La motivation ne tient pas toujours sur un grand discours. Elle se maintient souvent grâce à quelques traces simples, visibles et honnêtes."
+description: "Pourquoi un carnet simple peut aider à garder l'élan sans transformer la motivation en pression."
+excerpt: "La motivation tient souvent à quelques repères visibles et honnêtes, plus qu'à un grand discours."
 publishDate: 2026-02-24
 category: "motivation"
 tags:
@@ -40,4 +40,3 @@ Le carnet n'a pas besoin d'être beau, complet ou méthodique. S'il devient trop
 Une note rapide suffit. Ce qui compte, c'est la continuité du lien, pas la perfection de la forme.
 
 Dans l'univers Masoda, cette logique a du sens : un petit repère vivant vaut souvent mieux qu'un grand système théorique. La motivation douce n'est pas une absence d'ambition. C'est une façon plus durable de la protéger.
-

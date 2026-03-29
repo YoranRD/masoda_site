@@ -1,7 +1,7 @@
 ---
 title: "Retrouver confiance dans le geste créatif"
-description: "Des repères simples pour recréer un lien de confiance avec la création, même après une longue pause ou beaucoup d'autocritique."
-excerpt: "La confiance créative ne revient pas toujours par la performance. Elle revient souvent par des gestes plus simples, plus répétés et moins spectaculaires."
+description: "Des repères simples pour renouer avec la création après une pause, un doute ou trop d'autocritique."
+excerpt: "La confiance créative revient rarement par la performance. Elle revient souvent par des gestes simples, répétés et plus accueillants."
 publishDate: 2026-03-12
 category: "confiance-en-soi"
 tags:
@@ -67,4 +67,3 @@ Un cadre collectif bien tenu peut aider à relancer la confiance. Non pas parce 
 Voir d'autres personnes s'essayer, chercher, recommencer, rire ou douter peut rendre le geste plus respirable. La confiance revient parfois plus facilement dans un espace qui autorise l'humanité du processus.
 
 C'est aussi l'une des raisons pour lesquelles Masoda donne autant d'importance à l'ambiance : la beauté du cadre, la chaleur du groupe et la lisibilité du moment participent à cette confiance retrouvée.
-

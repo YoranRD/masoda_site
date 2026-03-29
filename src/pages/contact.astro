@@ -14,8 +14,8 @@ import { withBase } from "../lib/links";
 >
   <PageHero
     eyebrow="Contact"
-    title="Une prise de contact simple vaut mieux qu'un formulaire complexe."
-    intro="La page contact garde un chemin direct vers la réservation, l'e-mail et les réseaux. Le formulaire intégré reste disponible comme option complémentaire."
+    title="Parler à Masoda doit rester direct."
+    intro="Que l'objectif soit de réserver, de proposer une collaboration ou de mieux comprendre l'univers du projet, la page contact va à l'essentiel."
     actions={[
       {
         href: `mailto:${contactDetails.email}?subject=Contact%20Masoda`,
@@ -32,8 +32,8 @@ import { withBase } from "../lib/links";
       <div class="surface-card">
         <SectionIntro
           eyebrow="Coordonnées"
-          title="Les informations essentielles en un coup d'œil."
-          intro="Le contact direct reste la meilleure façon d'ouvrir un échange clair."
+          title="Les informations utiles, sans détour."
+          intro="L'échange direct reste la meilleure façon d'ouvrir une conversation claire et agréable."
         />
         <ul class="simple-list">
           <li>
@@ -58,13 +58,13 @@ import { withBase } from "../lib/links";
       <div class="surface-card">
         <SectionIntro
           eyebrow="Demande rapide"
-          title="Deux cas dominent cette page."
-          intro="Réserver une édition ou présenter une collaboration potentielle."
+          title="Deux demandes reviennent le plus souvent."
+          intro="Réserver une prochaine édition ou présenter un projet de collaboration."
         />
         <ul class="simple-list">
-          <li>Pour une inscription, le lien Billetweb du moment reste la voie la plus directe.</li>
-          <li>Pour une collaboration, un e-mail avec contexte, intention et échéance suffit pour démarrer.</li>
-          <li>Les réseaux servent surtout à prolonger la découverte de l'univers Masoda.</li>
+          <li>Pour une inscription, la billetterie du moment reste la voie la plus directe.</li>
+          <li>Pour une collaboration, un e-mail avec contexte, intention et échéance suffit pour démarrer proprement.</li>
+          <li>Les réseaux servent surtout à sentir l'ambiance et à prolonger la découverte de l'univers Masoda.</li>
         </ul>
         <div class="button-row" style="margin-top:1rem;">
           <a class="button button-primary" href={booking.url} target="_blank" rel="noopener noreferrer">
@@ -82,8 +82,8 @@ import { withBase } from "../lib/links";
     <div class="container">
       <SectionIntro
         eyebrow="Formulaire"
-        title="Un formulaire reste disponible en complément."
-        intro="L'iframe peut être conservée sans alourdir l'expérience principale."
+        title="Un formulaire reste disponible si besoin."
+        intro="L'essentiel passe déjà par l'e-mail, mais un formulaire complémentaire peut convenir selon le contexte."
       />
 
       <iframe
@@ -99,8 +99,8 @@ import { withBase } from "../lib/links";
     <div class="container">
       <SectionIntro
         eyebrow="Réseaux"
-        title="Les réseaux prolongent la conversation."
-        intro="Ils servent à voir l'ambiance du projet, les annonces et les inspirations visuelles."
+        title="Les réseaux prolongent la découverte."
+        intro="Ils permettent de sentir l'ambiance Masoda avant ou après une prise de contact."
       />
 
       <div class="grid-3">
@@ -122,8 +122,8 @@ import { withBase } from "../lib/links";
 
   <CTASection
     eyebrow="Priorité"
-    title="Réserver l'atelier ou ouvrir un échange utile."
-    body="Le site garde ici la même hiérarchie qu'ailleurs : atelier d'abord, collaboration ensuite, réseaux comme troisième porte d'entrée."
+    title="Réserver ou écrire avec une intention claire."
+    body="L'atelier reste la première porte d'entrée. La collaboration suit naturellement quand le contexte est aligné."
     actions={[
       { href: booking.url, label: booking.label, external: true },
       { href: `mailto:${contactDetails.email}`, label: "Envoyer un e-mail", variant: "secondary", external: true }

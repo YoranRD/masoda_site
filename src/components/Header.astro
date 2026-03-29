@@ -79,29 +79,32 @@ const isSecondaryOpen = secondaryNavigation.some((item) => isActive(item.href));
     position: sticky;
     top: 0;
     z-index: 40;
-    backdrop-filter: blur(14px);
-    background: rgba(248, 243, 235, 0.84);
+    backdrop-filter: blur(16px);
+    background:
+      linear-gradient(180deg, rgba(255, 252, 247, 0.94), rgba(250, 244, 236, 0.84));
     border-bottom: 1px solid var(--border);
+    box-shadow: 0 10px 24px rgba(107, 74, 56, 0.05);
   }
 
   .header-shell {
-    padding-block: 0.9rem 0.95rem;
+    padding-block: 0.95rem 1rem;
   }
 
   .header-top {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 1rem;
+    gap: 1.1rem;
   }
 
   .brand-link img {
-    width: clamp(136px, 26vw, 182px);
+    width: clamp(142px, 26vw, 188px);
     height: auto;
   }
 
   .header-booking {
     white-space: nowrap;
+    padding-inline: 1.28rem;
   }
 
   .header-bottom {
@@ -109,7 +112,16 @@ const isSecondaryOpen = secondaryNavigation.some((item) => isActive(item.href));
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    margin-top: 0.9rem;
+    margin-top: 1rem;
+  }
+
+  .primary-navigation {
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .primary-navigation::-webkit-scrollbar {
+    display: none;
   }
 
   .nav-list,
@@ -128,14 +140,15 @@ const isSecondaryOpen = secondaryNavigation.some((item) => isActive(item.href));
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 2.7rem;
+    min-height: 2.8rem;
     border-radius: 999px;
-    padding: 0.65rem 0.95rem;
+    padding: 0.7rem 1rem;
     text-decoration: none;
     color: var(--text-soft);
     border: 1px solid transparent;
+    background: rgba(255, 251, 245, 0.5);
     transition: border-color 150ms ease, background-color 150ms ease, color 150ms ease,
-      transform 150ms ease;
+      transform 150ms ease, box-shadow 150ms ease;
   }
 
   .nav-list a:hover,
@@ -145,8 +158,9 @@ const isSecondaryOpen = secondaryNavigation.some((item) => isActive(item.href));
   .more-nav[open] summary {
     color: var(--text);
     border-color: var(--border-strong);
-    background: rgba(255, 250, 242, 0.94);
+    background: rgba(255, 252, 247, 0.96);
     transform: translateY(-1px);
+    box-shadow: 0 10px 20px rgba(107, 74, 56, 0.06);
   }
 
   .more-nav {
@@ -156,7 +170,7 @@ const isSecondaryOpen = secondaryNavigation.some((item) => isActive(item.href));
   .more-nav summary {
     list-style: none;
     cursor: pointer;
-    background: rgba(255, 250, 242, 0.64);
+    background: rgba(255, 251, 245, 0.72);
   }
 
   .more-nav summary::-webkit-details-marker {
@@ -170,10 +184,10 @@ const isSecondaryOpen = secondaryNavigation.some((item) => isActive(item.href));
     width: min(18rem, 76vw);
     display: grid;
     gap: 0.35rem;
-    padding: 0.6rem;
+    padding: 0.7rem;
     border-radius: 1.2rem;
     border: 1px solid var(--border);
-    background: rgba(255, 249, 241, 0.97);
+    background: rgba(255, 252, 247, 0.98);
     box-shadow: var(--shadow-soft);
   }
 
@@ -197,6 +211,11 @@ const isSecondaryOpen = secondaryNavigation.some((item) => isActive(item.href));
       justify-content: center;
     }
 
+    .nav-list {
+      flex-wrap: nowrap;
+      padding-bottom: 0.15rem;
+    }
+
     .more-nav {
       width: 100%;
     }
@@ -213,4 +232,3 @@ const isSecondaryOpen = secondaryNavigation.some((item) => isActive(item.href));
     }
   }
 </style>
-

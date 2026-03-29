@@ -46,19 +46,24 @@ const { href, title, summary, eyebrow, statusLabel, image, imageAlt = "" } = Ast
 
   .category-media img {
     width: 100%;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 1 / 0.92;
     object-fit: cover;
   }
 
   .category-body {
     display: grid;
-    gap: 0.9rem;
-    padding: 1.1rem;
+    align-content: start;
+    gap: 0.95rem;
+    padding: 1.22rem;
   }
 
   .category-body h3,
   .category-body p {
     margin: 0;
+  }
+
+  .category-body h3 {
+    max-width: 14ch;
   }
 
   .category-footer {
@@ -67,6 +72,7 @@ const { href, title, summary, eyebrow, statusLabel, image, imageAlt = "" } = Ast
     justify-content: space-between;
     gap: 0.75rem;
     flex-wrap: wrap;
+    margin-top: auto;
+    padding-top: 0.15rem;
   }
 </style>
-

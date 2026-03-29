@@ -20,10 +20,10 @@ const pinterestLink = socialLinks.find((link) => link.label === "Pinterest");
 >
   <PageHero
     eyebrow="Journal / Blog"
-    title="Des textes pour prolonger l'univers Masoda avec justesse."
-    intro="Le blog reste éditorial et inspirant avant tout. Il accompagne les ateliers avec des contenus lisibles, sensibles et compatibles avec une stratégie SEO propre."
+    title="Le journal Masoda prolonge l'expérience avec douceur et clarté."
+    intro="Le blog accompagne les ateliers avec des textes sensibles, utiles et bien structurés, autour du bien-être, du repos, de la confiance et de l'élan créatif."
     actions={[
-      { href: "#articles", label: "Lire les articles", variant: "secondary" },
+      { href: "#articles", label: "Parcourir les articles", variant: "secondary" },
       { href: pinterestLink?.url ?? "/", label: "Ouvrir Pinterest", external: true }
     ]}
     meta={["Bien-être", "Motivation", "Repos", "Arts"]}
@@ -33,7 +33,7 @@ const pinterestLink = socialLinks.find((link) => link.label === "Pinterest");
     <div class="container">
       <SectionIntro
         eyebrow="Thèmes"
-        title="Les grands sujets que le journal cultive."
+        title="Les sujets que le journal fait circuler."
         intro="Le contenu cherche à rester chaleureux, accessible et nuancé, sans tomber dans le jargon ni dans les promesses excessives."
       />
 
@@ -54,8 +54,8 @@ const pinterestLink = socialLinks.find((link) => link.label === "Pinterest");
     <div class="container">
       <SectionIntro
         eyebrow="Articles"
-        title="Un contenu déjà prêt à grandir dans Astro."
-        intro="Les premiers billets donnent une base crédible, réutilisable et extensible pour la suite du journal."
+        title="Une base éditoriale prête à grandir."
+        intro="Les premiers billets installent une voix claire et un socle propre pour faire vivre le journal dans la durée."
       />
 
       <div class="grid-3">
@@ -76,8 +76,8 @@ const pinterestLink = socialLinks.find((link) => link.label === "Pinterest");
 
   <CTASection
     eyebrow="Passerelle"
-    title="Le journal accompagne les ateliers, il ne les remplace pas."
-    body="Le contenu éditorial nourrit l'univers de Masoda, mais la porte d'entrée prioritaire reste toujours la réservation d'un atelier."
+    title="Le journal ouvre des pistes, l'atelier fait vivre l'expérience."
+    body="Les textes nourrissent l'univers Masoda, mais la première invitation reste toujours de rejoindre un atelier."
     actions={[
       { href: booking.url, label: booking.label, external: true },
       { href: "/ateliers/", label: "Voir les ateliers", variant: "secondary" }

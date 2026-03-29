@@ -3,16 +3,16 @@ import { ensureHttpsUrl } from "../lib/validate";
 export const siteIdentity = {
   name: "Masoda",
   legalName: "Les ateliers Masoda",
-  tagline: "Ateliers créatifs afro-centrés, bien-être éditorial et future boutique curatée.",
+  tagline: "Ateliers créatifs afro-centrés, journal lifestyle sensible et curation à venir.",
   description:
-    "Masoda est un hub hybride afro-centré où les ateliers créatifs ouvrent la voie, entourés d'un journal inspirant et d'une boutique affiliée pensée comme une curation de confiance."
+    "Masoda est un hub afro-centré où l'atelier ouvre la rencontre : on vient y créer, ralentir et partager, puis prolonger l'expérience à travers un journal inspirant et une future curation choisie avec soin."
 } as const;
 
 export const booking = {
   url: "https://www.billetweb.fr/paint-and-jam-with-love",
-  label: "Réserver l'atelier du moment",
+  label: "Réserver la prochaine édition",
   shortLabel: "Réserver",
-  note: "Le lien de réservation est centralisé ici pour pouvoir être mis à jour facilement chaque mois."
+  note: "Le lien de réservation du moment est mis à jour ici pour garder un accès clair et immédiat à la prochaine édition."
 } as const;
 
 export const socialLinks = [
@@ -20,19 +20,19 @@ export const socialLinks = [
     label: "Instagram",
     url: "https://www.instagram.com/lesateliersmassoda/",
     handle: "@lesateliersmassoda",
-    description: "Retrouver l'ambiance des ateliers, les annonces et les coulisses du projet."
+    description: "Retrouver l'ambiance des ateliers, les annonces et les images qui donnent le ton du projet."
   },
   {
     label: "TikTok",
     url: "https://www.tiktok.com/@lesateliersmassoda1",
     handle: "@lesateliersmassoda1",
-    description: "Voir des formats courts autour des gestes créatifs, de l'énergie du groupe et du lifestyle Masoda."
+    description: "Voir le geste, l'énergie du groupe et les fragments de lifestyle qui prolongent l'univers Masoda."
   },
   {
     label: "Pinterest",
     url: "https://fr.pinterest.com/barbandchill/",
     handle: "barbandchill",
-    description: "Explorer des inspirations visuelles autour des matières, de la déco, des couleurs et du repos."
+    description: "Explorer les palettes, les matières, les objets et les inspirations visuelles qui nourrissent l'esthétique Masoda."
   }
 ] as const;
 
@@ -96,27 +96,27 @@ export const homePillars = [
   {
     title: "Ateliers créatifs",
     description:
-      "Des rendez-vous pensés pour ralentir, créer, partager et se reconnecter dans une ambiance soignée.",
+      "Des rendez-vous où l'on vient créer, respirer et partager dans une atmosphère soignée, chaleureuse et accessible.",
     href: "/ateliers/"
   },
   {
     title: "Journal inspirant",
     description:
-      "Un espace éditorial pour parler de bien-être, de confiance en soi, d'arts, de repos et de ressources personnelles.",
+      "Des textes pour nourrir le bien-être, la confiance, le repos et l'élan créatif avec une voix claire et sensible.",
     href: "/blog/"
   },
   {
     title: "Boutique curatée",
     description:
-      "Une future sélection affiliée autour de baya, plantes, nutrition anti-stress, déco et art, sans logique de catalogue massif.",
+      "Une future sélection affiliée courte et cohérente autour des baya, des plantes, de la nutrition anti-stress, de la déco et de l'art.",
     href: "/boutique/"
   }
 ] as const;
 
 export const collaborationHighlights = [
-  "Activer un lieu avec une proposition chaleureuse et identifiable.",
-  "Imaginer une collaboration de marque cohérente avec le rythme Masoda.",
-  "Concevoir une expérience créative pour une communauté, un événement ou une activation privée."
+  "Donner à un lieu une expérience chaleureuse, visuelle et immédiatement lisible.",
+  "Imaginer avec une marque une activation cohérente avec l'univers lifestyle et créatif de Masoda.",
+  "Créer un format sur mesure pour une communauté, un lancement ou un moment privé à taille humaine."
 ] as const;
 
 [
@@ -126,4 +126,3 @@ export const collaborationHighlights = [
   contactDetails.calendarPublicUrl,
   contactDetails.contactFormEmbedUrl
 ].forEach((url, index) => ensureHttpsUrl(url, `Configuration externe #${index + 1}`));
-

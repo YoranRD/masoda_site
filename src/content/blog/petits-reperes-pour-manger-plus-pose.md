@@ -1,7 +1,7 @@
 ---
 title: "Petits repères pour manger de façon plus posée"
-description: "Une approche nuancée de la nutrition anti-stress : moins d'injonctions, plus d'attention au rythme, au confort et au quotidien."
-excerpt: "Parler de nutrition anti-stress peut rester simple et réaliste : manger plus posé, repérer ce qui apaise et éviter les discours miracle."
+description: "Une approche calme de la nutrition anti-stress, entre confort, rythme et quotidien réaliste."
+excerpt: "Parler de nutrition anti-stress peut rester simple : chercher plus de stabilité, plus de douceur et moins de discours miracle."
 publishDate: 2026-03-07
 category: "nutrition-anti-stress"
 tags:
@@ -57,4 +57,3 @@ Le mieux-être alimentaire a aussi quelque chose à voir avec l'atmosphère :
 Dans les ateliers Masoda, la gourmandise n'est pas un détail décoratif. Elle participe à l'accueil. Elle aide à installer un moment habité, où l'on ne crée pas à vide.
 
 Parler de nutrition anti-stress dans ce cadre, c'est donc maintenir une approche sobre : des pistes, des attentions, des idées simples. Pas une doctrine. Pas un remède miracle. Juste une façon plus douce d'habiter son quotidien.
-
