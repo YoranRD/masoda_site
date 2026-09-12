@@ -58,6 +58,7 @@ export const mainNavigation = [
 
 export const secondaryNavigation = [
   { href: "/a-propos/", label: "À propos" },
+  { href: "/la-lettre/", label: "La Lettre" },
   { href: "/partenaires/", label: "Partenaires" },
   { href: "/evenements/", label: "Événements" },
   { href: "/contact/", label: "Contact" },
@@ -78,6 +79,7 @@ export const footerSections = [
     title: "Découvrir",
     links: [
       { href: "/a-propos/", label: "À propos" },
+      { href: "/la-lettre/", label: "La Lettre" },
       { href: "/evenements/", label: "Événements" },
       { href: "/faq/", label: "FAQ" }
     ]
